@@ -35,3 +35,24 @@
     );
   }
 add_action('init', __NAMESPACE__ . '\\add_dog');
+
+// add categories for dog custom post type
+function add_dog_cats() {
+	wp_insert_term(
+		'Housebroken',
+		'category',
+		array(
+		  'description'	=> 'Dog is housebroken.',
+		  'slug' 		=> 'housebroken'
+		)
+  );
+  wp_insert_term(
+		'Vaccinations up to date',
+		'category',
+		array(
+		  'description'	=> 'Vaccinations are up to date.',
+		  'slug' 		=> 'vaccinated'
+		)
+	);
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_dog_cats' );
