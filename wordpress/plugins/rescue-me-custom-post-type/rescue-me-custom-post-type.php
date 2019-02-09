@@ -14,22 +14,24 @@
 
  namespace KarenCodes\rescueme;
 
+//  add dog custom post type
  function add_dog()
-{
-    register_post_type('dogs',
-                       array(
-                           'labels'      => array(
-                               'name'          => __('Dogs'),
-                               'singular_name' => __('Dog'),
-                           ),
-                           'menu_position' => 5,
-                           'supports' => array('title','editor','thumbnail', 'excerpt','custom-fields','author','comments'),
-                           'menu_icon' => 'dashicons-heart',
-                           'taxonomies' => array('category','post_tag'),
-                           'public'      => true,
-                           'has_archive' => true,
-                           'show_in_rest' => true,
-                       )
+  {
+    register_post_type(
+      'dogs',
+      array(
+          'labels'      => array(
+              'name'          => __('Dogs', 'rescue-me'),
+              'singular_name' => __('Dog', 'rescue-me'),
+          ),
+          'menu_position' => 5,
+          'supports' => array('title','editor','thumbnail', 'excerpt','custom-fields','author','comments'),
+          'menu_icon' => 'dashicons-heart',
+          'taxonomies' => array('category','post_tag'),
+          'public'      => true,
+          'has_archive' => true,
+          'show_in_rest' => true,
+      )
     );
-}
+  }
 add_action('init', __NAMESPACE__ . '\\add_dog');
