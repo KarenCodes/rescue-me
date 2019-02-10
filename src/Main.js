@@ -12,6 +12,7 @@ class Main extends Component {
     return (
       <Switch>
       <Route exact path='/' component={Dogs}/>
+      <Route path='/dog' component={Dogs}/>
       <Route path='/form' component={Form}/>
       <Route path='/about' component={About}/>
     </Switch>
