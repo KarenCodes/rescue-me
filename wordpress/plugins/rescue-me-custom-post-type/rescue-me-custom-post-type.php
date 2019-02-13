@@ -35,3 +35,48 @@
     );
   }
 add_action('init', __NAMESPACE__ . '\\add_dog');
+
+// add categories for dog custom post type
+function add_dog_cats() {
+	wp_insert_term(
+		'Good with Cats',
+		'category',
+		array(
+		  'description'	=> 'Used with Rescue Me.',
+		  'slug' 		=> 'rescue-me-good-with-cats'
+		)
+  );
+  wp_insert_term(
+		'Good with Dogs',
+		'category',
+		array(
+		  'description'	=> 'Used with Rescue Me.',
+		  'slug' 		=> 'rescue-me-good-with-dogs'
+		)
+  );
+  wp_insert_term(
+		'Good with Kids',
+		'category',
+		array(
+		  'description'	=> 'Used with Rescue Me.',
+		  'slug' 		=> 'rescue-me-good-with-kids'
+		)
+  );
+  wp_insert_term(
+		'Female',
+		'category',
+		array(
+		  'description'	=> 'Used with Rescue Me.',
+		  'slug' 		=> 'rescue-me-female'
+		)
+  );
+  wp_insert_term(
+		'Male',
+		'category',
+		array(
+		  'description'	=> 'Used with Rescue Me.',
+		  'slug' 		=> 'rescue-me-male'
+		)
+  );
+}
+add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_dog_cats' );
