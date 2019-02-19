@@ -1,14 +1,21 @@
 import React from 'react';
 import { Route, Switch, Link, Redirect } from "react-router-dom";
 import Dog from './Dog';
+import WP_URL from './Helpers.js';
 
 export default class Dogs extends React.Component {
   state = {
-  dogs: []
+  dogs: [],
   };
   componentDidMount() {
-  fetch("https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/dogs")
-  .then(response => response.json())
+  // Get dog data from WordPress site using the API for the custom post type rescue-me-dog
+  fetch(WP_URL)
+  .then(response => {
+    if (response.ok ) return response.json();
+    // If the custom post type is not insalled on the WordPress site, there will be a 404
+    // Improvement: Add information of error on screen
+    else throw Error(`Request rejected with status ${response.status}`);
+  })
   .then(dogs => {
   this.setState({ dogs });
   })
