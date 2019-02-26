@@ -83,3 +83,9 @@ button.more-dogs {
 ul li {
 	list-style-type: none;
 }
+
+.rescue-me-about,
+.embed-youtube iframe,
+.rm-contact {
+	display: none;
+}
