@@ -5,8 +5,6 @@ import Image from './Image';
 import Content from './Content';
 import Features from './Features';
 import GoodWith from './GoodWith';
-import Contact from './Contact';
-import Video from './Video';
 
 export default class Dog extends React.Component {
 	render = () => {
@@ -20,8 +18,6 @@ export default class Dog extends React.Component {
 					<Content dog={dog} />
 					<Features dog={dog} />
 					<GoodWith dog={dog} />
-					<Contact dog={dog} />
-					<Video dog={dog} />
 				</article>
 
 				<button className="more-dogs">
