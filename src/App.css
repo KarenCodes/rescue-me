@@ -32,50 +32,59 @@
 }
 /* kn start */
 .dog.container {
-	/* display: grid;
+	display: grid;
 	grid-template-columns: 2fr 1fr;
 	grid-template-rows: auto auto auto;
 	grid-template-areas:
-		'head head'
-		'content sidebar'
-		'content sidebar'
-		'foot foot';
-	grid-gap: 20px; */
+		'image image'
+		'name features'
+		'about goodwith'
+		'about contact'
+		'video video'
+		'button button';
+	grid-gap: 20px;
 }
 
 .dog-image {
-	grid-area: head;
+	grid-area: image;
+	grid-column: 1 / -1;
 	background: palevioletred;
+	order: 1;
+	align-content: center;
+	width: 100%;
 }
 
 .dog-name {
-	grid-area: content;
+	grid-area: name;
+	order: 2;
 }
-
-.dog-content {
-	grid-area: content;
-}
-
 .features {
-	grid-area: sidebar;
+	grid-area: features;
+	order: 3;
 }
 
 .rescue-me-about {
-	grid-area: content;
+	grid-area: about;
 	background: lightblue;
+	grid-row: span 3;
+	order: 4;
 }
-
 .rm-contact {
-	grid-area: sidebar;
+	grid-area: contact;
 	background: lightgreen;
+	order: 5;
 }
 
 figure.wp-block-embed-youtube {
-	grid-area: sidebar;
+	grid-area: video;
+	background: lightblue;
+	grid-column: span 2;
+	order: 6;
 }
 
 button.more-dogs {
-	grid-area: foot;
+	grid-area: button;
+	grid-column: 1 / -1;
 	background: lavender;
 	font-size: 25px;
 	padding: 20px;
