@@ -32,12 +32,19 @@
 }
 /* kn start */
 .dog.container {
+	padding: 40px 10%;
+	max-width: 800px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 20px auto;
+
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: auto auto auto;
+
 	grid-template-areas:
 		'image image'
-		'name features'
+		'name name'
+		'about features'
 		'about goodwith'
 		'about contact'
 		'video video'
@@ -48,43 +55,52 @@
 .dog-image {
 	grid-area: image;
 	grid-column: 1 / -1;
-	background: palevioletred;
 	order: 1;
-	align-content: center;
-	width: 100%;
+	justify-self: center;
+
+	/* width: auto; */
 }
 
 .dog-name {
+	font-size: 30px;
 	grid-area: name;
+	grid-column: 1 / -1;
 	order: 2;
-}
-.features {
-	grid-area: features;
-	order: 3;
 }
 
 .rescue-me-about {
 	grid-area: about;
-	background: lightblue;
 	grid-row: span 3;
+	order: 3;
+}
+
+.features {
+	grid-area: features;
+
 	order: 4;
 }
-.rm-contact {
-	grid-area: contact;
-	background: lightgreen;
+
+.good-with {
+	grid-area: goodwith;
+
 	order: 5;
+}
+
+.dog-contact {
+	grid-area: contact;
+	order: 6;
 }
 
 figure.wp-block-embed-youtube {
 	grid-area: video;
-	background: lightblue;
 	grid-column: span 2;
-	order: 6;
+	order: 7;
 }
 
 button.more-dogs {
 	grid-area: button;
 	grid-column: 1 / -1;
+	order: 8;
 	background: lavender;
 	font-size: 25px;
 	padding: 20px;
