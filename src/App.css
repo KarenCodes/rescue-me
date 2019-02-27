@@ -32,60 +32,81 @@
 }
 /* kn start */
 .dog.container {
-	/* display: grid;
+	padding: 40px 10%;
+	max-width: 800px;
+	border: 1px solid black;
+	border-radius: 10px;
+	margin: 20px auto;
+	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: auto auto auto;
+
 	grid-template-areas:
-		'head head'
-		'content sidebar'
-		'content sidebar'
-		'foot foot';
-	grid-gap: 20px; */
+		'image image'
+		'name name'
+		'about features'
+		'about goodwith'
+		'about contact'
+		'video video'
+		'button button';
+	grid-gap: 20px;
 }
 
 .dog-image {
-	grid-area: head;
-	background: palevioletred;
+	grid-area: image;
+	grid-column: 1 / -1;
+	order: 1;
+	justify-self: center;
+
+	/* width: auto; */
 }
 
 .dog-name {
-	grid-area: content;
-}
-
-.dog-content {
-	grid-area: content;
-}
-
-.features {
-	grid-area: sidebar;
+	font-size: 30px;
+	grid-area: name;
+	grid-column: 1 / -1;
+	order: 2;
 }
 
 .rescue-me-about {
-	grid-area: content;
-	background: lightblue;
+	grid-area: about;
+	grid-row: span 3;
+	order: 3;
 }
 
-.rm-contact {
-	grid-area: sidebar;
-	background: lightgreen;
+.features {
+	grid-area: features;
+
+	order: 4;
+}
+
+.good-with {
+	grid-area: goodwith;
+
+	order: 5;
+}
+
+.dog-contact {
+	grid-area: contact;
+	order: 6;
 }
 
 figure.wp-block-embed-youtube {
-	grid-area: sidebar;
+	grid-area: video;
+	grid-column: span 2;
+	order: 7;
+}
+
+.more-dogs {
+	grid-area: button;
+	grid-column: 1 / -1;
+	order: 8;
 }
 
 button.more-dogs {
-	grid-area: foot;
 	background: lavender;
 	font-size: 25px;
 	padding: 20px;
 }
 ul li {
 	list-style-type: none;
-}
-
-.rescue-me-about,
-.embed-youtube iframe,
-.rm-contact {
-	display: none;
 }
