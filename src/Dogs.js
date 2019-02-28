@@ -44,7 +44,7 @@ export default class Dogs extends React.Component {
 								conditions={this.state.conditions}
 								setConditions={this.setConditions}
 							/>
-							<ul>
+							<ul className="dog-list">
 								{this.state.dogs.length < 1 && <li key="empty">No dogs yet!</li>}
 								{
 									<React.Fragment>
