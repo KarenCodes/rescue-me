@@ -4,5 +4,74 @@
 const WP_URL = 'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs';
 // Metadata
 //TODO: Convert Array into array of objects to add display name for meta
-export const RESCUE_ME_META = ['rescue_me_meta_good_with_kids','rescue_me_meta_good_with_cats','rescue_me_meta_good_with_dogs'];
+export const RESCUE_ME_META = [
+  // { name: 'good_with',
+  //   values: ['dogs', 'cats','kids'],
+  // },
+  {
+    label : 'Gender',
+    name: 'rescue_me_meta_gender',
+    values : [
+      {
+        label: 'Male',
+        name: 'male',
+      }
+      , 
+      {
+        label: 'Female',
+        name: 'female',
+      }
+    ],
+  },
+  {
+    label : 'Size',
+    name: 'rescue_me_meta_size',
+    values : [
+      {
+        label: 'Small',
+        name: 'Small',
+      }
+      , 
+      {
+        label: 'Medium',
+        name: 'Medium',
+      }
+      , 
+      {
+        label: 'Large',
+        name: 'Large',
+      }
+      , 
+      {
+        label: 'Extra Large',
+        name: 'Extra Large',
+      }
+    ],
+  },
+  {
+    label : 'Age',
+    name: 'rescue_me_meta_age',
+    values : [
+      {
+        label: 'Puppy',
+        name: 'Puppy',
+      }
+      , 
+      {
+        label: 'Young',
+        name: 'Young',
+      }
+      ,
+      {
+        label: 'Adult',
+        name: 'Adult',
+      }
+      ,
+      {
+        label: 'Senior',
+        name: 'Senior',
+      }
+    ],
+  },
+];
 export default WP_URL;
