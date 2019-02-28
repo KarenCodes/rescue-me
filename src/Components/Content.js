@@ -15,20 +15,8 @@ const Content = props => {
 	const html = dog.content.rendered;
 	const parserOptions = {
 		replace: ({ attribs, children }) => {
-			if (!attribs) return;
-			// while we're here give contact a new class name & heading :)
-			// if (attribs.class === 'wp-block-rescue-me-dog-block rm-contact') {
-			// 	return (
-			// 		<div className="dog-contact">
-			// 			<h4>Ask Me About {dog.title.rendered} </h4>
-			// 			{domToReact(children, parserOptions)}
-			// 		</div>
-			// 	);
-			// }
-			console.log(attribs.class);
-			const attribClass = attribs.class;
-			console.log('a', attribClass);
-			const video = attribClass.search('video');
+			if (!attribs || !attribs.class) return;
+			// contact - change class and add title
 			if (attribs.class === 'wp-block-rescue-me-dog-block rm-contact') {
 				return (
 					<div className="dog-contact">
@@ -36,6 +24,7 @@ const Content = props => {
 						{domToReact(children, parserOptions)}
 					</div>
 				);
+				// about - change class and add title
 			} else if (attribs.class === 'rescue-me-about') {
 				return (
 					<div className="dog-about">
@@ -43,16 +32,15 @@ const Content = props => {
 						{domToReact(children, parserOptions)}
 					</div>
 				);
+				// video - change class and add title - this one has variable classes so use search for string
+			} else if (attribs.class.search('rescue-me-video') > 0) {
+				return (
+					<div className="dog-video">
+						<h4>Watch {dog.title.rendered} </h4>
+						{domToReact(children, parserOptions)}
+					</div>
+				);
 			}
-			// else if (video) {
-			// 	console.log('Fyeah', attribClass, attribs);
-			// 	return (
-			// 		<div className="dog-video">
-			// 			<h4>Watch {dog.title.rendered} </h4>
-			// 			{domToReact(children, parserOptions)}
-			// 		</div>
-			// 	);
-			// }
 		}
 	};
 	const contentDiv = Parser(html, parserOptions);

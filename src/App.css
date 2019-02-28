@@ -159,7 +159,7 @@ header {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
-.rescue-me-about {
+.dog-about {
 	text-align: left;
 	line-height: 1.5;
 	/* grid */
@@ -205,7 +205,7 @@ header {
 	margin-bottom: 0;
 }
 
-figure.wp-block-embed-youtube {
+.dog-video {
 	/* grid */
 	grid-area: video;
 	grid-column: span 2;
