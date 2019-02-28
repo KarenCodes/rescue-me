@@ -1,7 +1,7 @@
 // Consts and helpers functions
 
 // WordPress site URL
-const WP_URL = 'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs';
+const WP_URL = 'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs?_embed';
 // Metadata
 //TODO: Convert Array into array of objects to add display name for meta
 export const RESCUE_ME_META = [
@@ -75,3 +75,4 @@ export const RESCUE_ME_META = [
   },
 ];
 export default WP_URL;
+

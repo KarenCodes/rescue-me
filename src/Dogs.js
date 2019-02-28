@@ -6,6 +6,7 @@ import Filter from './Filter.js';
 import FilteredDogList from './FilteredDogsList.js';
 
 export default class Dogs extends React.Component {
+
   state = {
     dogs: [],
     conditions: {}
@@ -76,4 +77,5 @@ export default class Dogs extends React.Component {
       </Switch>
     );
   }
+
 }
