@@ -16,11 +16,43 @@ const Content = props => {
 	const parserOptions = {
 		replace: ({ attribs, children }) => {
 			if (!attribs) return;
-			// while we're here give contact a better class name :)
+			// while we're here give contact a new class name & heading :)
+			// if (attribs.class === 'wp-block-rescue-me-dog-block rm-contact') {
+			// 	return (
+			// 		<div className="dog-contact">
+			// 			<h4>Ask Me About {dog.title.rendered} </h4>
+			// 			{domToReact(children, parserOptions)}
+			// 		</div>
+			// 	);
+			// }
+			console.log(attribs.class);
+			const attribClass = attribs.class;
+			console.log('a', attribClass);
+			const video = attribClass.search('video');
 			if (attribs.class === 'wp-block-rescue-me-dog-block rm-contact') {
-				console.log(children);
-				return <div className="dog-contact">{domToReact(children, parserOptions)}</div>;
+				return (
+					<div className="dog-contact">
+						<h4>Ask Me About {dog.title.rendered}</h4>
+						{domToReact(children, parserOptions)}
+					</div>
+				);
+			} else if (attribs.class === 'rescue-me-about') {
+				return (
+					<div className="dog-about">
+						<h4>About {dog.title.rendered} </h4>
+						{domToReact(children, parserOptions)}
+					</div>
+				);
 			}
+			// else if (video) {
+			// 	console.log('Fyeah', attribClass, attribs);
+			// 	return (
+			// 		<div className="dog-video">
+			// 			<h4>Watch {dog.title.rendered} </h4>
+			// 			{domToReact(children, parserOptions)}
+			// 		</div>
+			// 	);
+			// }
 		}
 	};
 	const contentDiv = Parser(html, parserOptions);
