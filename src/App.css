@@ -267,6 +267,13 @@ header {
 	height: 100%;
 }
 
+.button-link {
+	/* grid */
+	grid-area: button;
+	grid-column: 1 / -1;
+	order: 8;
+}
+
 .filters {
 	text-align: center;
 }
@@ -297,12 +304,4 @@ button:focus {
 
 button:focus {
 	outline: 3px solid var(--pink);
-}
-
-button.more-dogs,
-button.link-dog {
-	/* grid */
-	grid-area: button;
-	grid-column: 1 / -1;
-	order: 8;
 }

@@ -18,9 +18,14 @@ export default class Dog extends React.Component {
 					<Content dog={dog} />
 					<Features dog={dog} />
 					<GoodWith dog={dog} />
-					<button className="more-dogs">
+					{/* <button className="more-dogs">
 						<Link to="/">See More Dogs</Link>
-					</button>
+					</button> */}
+
+					<Link to="/" className="button-link">
+						{' '}
+						<button className="more-dogs">See More Dogs</button>
+					</Link>
 				</article>
 			</div>
 		);
