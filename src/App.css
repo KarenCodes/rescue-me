@@ -37,6 +37,11 @@ ul li {
 	list-style-type: none;
 }
 
+ul {
+	padding: 0;
+	margin: 0;
+}
+
 .fa-child:before,
 .fa-cat:before,
 .fa-dog:before,
@@ -174,7 +179,13 @@ header {
 	order: 3;
 	/* grid within grid */
 	display: grid;
+	grid-gap: 5px;
 	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features li {
+	align-self: center;
+	justify-self: center;
 }
 
 .dog-about {
