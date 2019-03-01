@@ -22,6 +22,7 @@
 }
 h1 {
 	font-size: 30px;
+	text-align: center;
 }
 h2 {
 	font-size: 26px;
@@ -140,6 +141,7 @@ header {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 20px;
+	padding: 3%;
 }
 
 .dog-list .dog.container {
@@ -221,48 +223,6 @@ header {
 .dog-contact a {
 	color: white;
 }
-
-.good-with {
-	line-height: 2.5;
-	/* grid */
-	grid-area: goodwith;
-	justify-self: center;
-	order: 6;
-}
-
-.good-with h4 {
-	margin-bottom: 0;
-}
-
-.dog-video {
-	/* grid */
-	grid-area: video;
-	grid-column: span 2;
-	order: 7;
-}
-
-button.more-dogs,
-button.link-dog {
-	background: var(--darkblue);
-	font-size: 20px;
-	padding: 20px;
-	border-radius: 5px;
-	/* grid */
-	grid-area: button;
-	grid-column: 1 / -1;
-	order: 8;
-}
-button.more-dogs a,
-button.link-dog a {
-	color: white;
-	font-weight: bold;
-}
-
-button.more-dogs:hover,
-button.link-dog:hover {
-	background: var(--brightblue);
-}
-
 .rm-contact-phone:before {
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -275,4 +235,62 @@ button.link-dog:hover {
 	font-weight: 900;
 	content: '\f0e0';
 	padding-right: 8px;
+}
+
+.good-with {
+	line-height: 2.5;
+	/* grid */
+	grid-area: goodwith;
+	justify-self: center;
+	order: 6;
+}
+.good-with h4 {
+	margin-bottom: 0;
+}
+
+.dog-video {
+	/* grid */
+	grid-area: video;
+	grid-column: span 2;
+	order: 7;
+}
+.filters {
+	text-align: center;
+}
+
+.filters button {
+	margin-right: 5px;
+}
+
+button {
+	background: var(--darkblue);
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 20px;
+	border-radius: 5px;
+}
+button.large {
+}
+button a {
+	color: white;
+	font-weight: bold;
+}
+
+button:hover,
+button:active,
+button:focus {
+	background: var(--brightblue);
+}
+
+button:focus {
+	outline: 3px solid var(--pink);
+}
+
+button.more-dogs,
+button.link-dog {
+	/* grid */
+	grid-area: button;
+	grid-column: 1 / -1;
+	order: 8;
 }
