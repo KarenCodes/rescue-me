@@ -37,6 +37,11 @@ ul li {
 	list-style-type: none;
 }
 
+ul {
+	padding: 0;
+	margin: 0;
+}
+
 .fa-child:before,
 .fa-cat:before,
 .fa-dog:before,
@@ -131,6 +136,24 @@ header {
 	grid-gap: 10px;
 }
 
+.dog-list {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 20px;
+}
+
+.dog-list .dog.container {
+	padding: 10px 2%;
+	/* grid */
+	grid-template-columns: 1fr;
+	grid-template-areas:
+		'image'
+		'name'
+		'features'
+		'goodwith'
+		'button';
+}
+
 .dog-image {
 	box-shadow: 0 5px 5px 0 var(--shadow);
 	/* grid */
@@ -156,7 +179,13 @@ header {
 	order: 3;
 	/* grid within grid */
 	display: grid;
+	grid-gap: 5px;
 	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.features li {
+	align-self: center;
+	justify-self: center;
 }
 
 .dog-about {
@@ -212,7 +241,8 @@ header {
 	order: 7;
 }
 
-button.more-dogs {
+button.more-dogs,
+button.link-dog {
 	background: var(--darkblue);
 	font-size: 20px;
 	padding: 20px;
@@ -222,12 +252,14 @@ button.more-dogs {
 	grid-column: 1 / -1;
 	order: 8;
 }
-button.more-dogs a {
+button.more-dogs a,
+button.link-dog a {
 	color: white;
 	font-weight: bold;
 }
 
-button.more-dogs:hover {
+button.more-dogs:hover,
+button.link-dog:hover {
 	background: var(--brightblue);
 }
 
