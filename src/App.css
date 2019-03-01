@@ -69,10 +69,10 @@ ul {
 header {
 	background-color: var(--darkblue);
 	/* min-height: 5vh; */
-	padding: 20px 0 20px 30px;
+	padding: 20px 20px 20px 30px;
 	/* grid site name and nav */
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: minmax(100px, 1fr) 1fr;
 	grid-template-areas: 'sitename nav';
 }
 
@@ -91,14 +91,20 @@ header {
 
 #navigation ul {
 	margin: 0;
-	font-size: 25px;
+	padding: 0;
+	font-size: 20px;
 	color: white;
 	/* grid within header grid */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 #navigation li a {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
 	grid-area: nav;
 }
 
@@ -107,7 +113,8 @@ header {
 }
 
 #navigation ul a:hover {
-	color: var(--brightpink);
+	color: white;
+	background: var(--brightblue);
 }
 
 :any-link {
@@ -153,13 +160,14 @@ header {
 	padding: 3%;
 	/* grid */
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	justify-items: center;
 	grid-gap: 20px;
 }
 
 .dog-list .doglist.container .card-link {
 	/* padding: 10px 2%; */
-	/* max-width: 150px; */
+	/* max-width: 300px; */
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
 	border-radius: 10px;
