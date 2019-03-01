@@ -16,9 +16,10 @@ export default class DogCard extends React.Component {
 					<Name dog={dog} />
 					<Features dog={dog} />
 					<GoodWith dog={dog} />
-					<button className="link-dog">
-						<Link to={`/dog/${dog.slug}`}>More about {dog.title.rendered}</Link>
-					</button>
+
+					<Link className="button-link" to={`/dog/${dog.slug}`}>
+						<button className="link-dog">More about {dog.title.rendered}</button>
+					</Link>
 				</article>
 			</li>
 		);
