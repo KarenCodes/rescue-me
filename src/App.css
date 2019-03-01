@@ -56,8 +56,6 @@ header {
 	background-color: var(--darkblue);
 	/* min-height: 5vh; */
 	padding: 20px 0 20px 30px;
-
-	text-shadow: 1px 1px var(--shadow);
 	/* grid site name and nav */
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -270,8 +268,7 @@ button {
 	padding: 20px;
 	border-radius: 5px;
 }
-button.large {
-}
+
 button a {
 	color: white;
 	font-weight: bold;
