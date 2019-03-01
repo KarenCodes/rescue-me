@@ -11,14 +11,12 @@ export default class DogCard extends React.Component {
 
 		return (
 			<li className="dog-card" key={dog.id}>
-				<article key={dog.id} className="dog container">
-					<Image dog={dog} size={'thumbnail'} />
-					<Name dog={dog} />
-					<Features dog={dog} />
-					<GoodWith dog={dog} />
-
-					<Link className="button-link" to={`/dog/${dog.slug}`}>
-						<button className="link-dog">More about {dog.title.rendered}</button>
+				<article key={dog.id} className="doglist container">
+					<Link className="card-link" key={dog.id} to={`/dog/${dog.slug}`}>
+						<Image dog={dog} size={'medium'} />
+						<Name dog={dog} />
+						<Features dog={dog} />
+						<GoodWith dog={dog} />
 					</Link>
 				</article>
 			</li>
