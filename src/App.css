@@ -41,9 +41,11 @@ a {
 	color: var(--black);
 }
 
-.dog-card article:hover {
+.dog-card article:hover,
+.dog-card article:focus {
 	color: var(--brightblue);
 	border: 3px solid var(--brightblue);
+	border-radius: 10px;
 }
 
 ul li {
@@ -148,16 +150,23 @@ header {
 }
 
 .dog-list {
+	padding: 3%;
+	/* grid */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 20px;
-	padding: 3%;
 }
 
-.dog-list .dog.container {
-	padding: 10px 2%;
+.dog-list .doglist.container .card-link {
+	/* padding: 10px 2%; */
+	/* max-width: 150px; */
+	box-shadow: 0 1px 1px 0 var(--shadow);
+	background: var(--paleblue);
+	border-radius: 10px;
 	/* grid */
-	grid-template-columns: 1fr;
+	display: grid;
+	justify-items: center;
+	grid-template-columns: 300px;
 	grid-template-areas:
 		'image'
 		'name'
@@ -251,11 +260,14 @@ header {
 	line-height: 2.5;
 	/* grid */
 	grid-area: goodwith;
-	justify-self: center;
+	text-align: center;
 	order: 6;
 }
 .good-with h4 {
 	margin-bottom: 0;
+}
+.dog-list .good-with h4 {
+	font-size: 16px;
 }
 
 .dog-video {

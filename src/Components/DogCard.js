@@ -11,9 +11,9 @@ export default class DogCard extends React.Component {
 
 		return (
 			<li className="dog-card" key={dog.id}>
-				<article key={dog.id} className="dog container">
+				<article key={dog.id} className="doglist container">
 					<Link className="card-link" key={dog.id} to={`/dog/${dog.slug}`}>
-						<Image dog={dog} size={'thumbnail'} />
+						<Image dog={dog} size={'medium'} />
 						<Name dog={dog} />
 						<Features dog={dog} />
 						<GoodWith dog={dog} />
