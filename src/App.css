@@ -323,6 +323,23 @@ single dog card for list of dogs
 
 .filters {
 	text-align: center;
+	max-width: 650px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.filters h2 {
+	font-size: 22px;
+	font-weight: normal;
+}
+
+.filters ul {
+	margin: 0 auto;
+	/* grid */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	/* justify-items: center; */
+	grid-gap: 5px;
 }
 
 .filters button {
