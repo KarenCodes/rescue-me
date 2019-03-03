@@ -345,7 +345,8 @@ button a {
 
 button:hover,
 button:active,
-button:focus {
+button:focus,
+.filters button.selected {
 	background: var(--brightblue);
 }
 
