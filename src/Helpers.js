@@ -1,78 +1,71 @@
 // Consts and helpers functions
 
 // WordPress site URL
-const WP_URL = 'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs?_embed';
+const WP_URL =
+  'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs?_embed';
 // Metadata
 //TODO: Convert Array into array of objects to add display name for meta
-export const RESCUE_ME_META = [
+export const FILTERS = [
   // { name: 'good_with',
   //   values: ['dogs', 'cats','kids'],
   // },
   {
-    label : 'Gender',
+    label: 'Gender',
     name: 'rescue_me_meta_gender',
-    values : [
+    values: [
       {
         label: 'Male',
-        name: 'male',
-      }
-      , 
+        name: 'Male'
+      },
       {
         label: 'Female',
-        name: 'female',
+        name: 'Female'
       }
-    ],
+    ]
   },
   {
-    label : 'Size',
+    label: 'Size',
     name: 'rescue_me_meta_size',
-    values : [
+    values: [
       {
         label: 'Small',
-        name: 'Small',
-      }
-      , 
+        name: 'Small'
+      },
       {
         label: 'Medium',
-        name: 'Medium',
-      }
-      , 
+        name: 'Medium'
+      },
       {
         label: 'Large',
-        name: 'Large',
-      }
-      , 
+        name: 'Large'
+      },
       {
         label: 'Extra Large',
-        name: 'Extra Large',
+        name: 'Extra Large'
       }
-    ],
+    ]
   },
   {
-    label : 'Age',
+    label: 'Age',
     name: 'rescue_me_meta_age',
-    values : [
+    values: [
       {
         label: 'Puppy',
-        name: 'Puppy',
-      }
-      , 
+        name: 'Puppy'
+      },
       {
         label: 'Young',
-        name: 'Young',
-      }
-      ,
+        name: 'Young'
+      },
       {
         label: 'Adult',
-        name: 'Adult',
-      }
-      ,
+        name: 'Adult'
+      },
       {
         label: 'Senior',
-        name: 'Senior',
+        name: 'Senior'
       }
-    ],
-  },
+    ]
+  }
 ];
 export default WP_URL;
-
