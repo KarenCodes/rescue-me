@@ -7,11 +7,9 @@
 	--paleblue: #eaeef2;
 	/* links */
 	--brightblue: #4ba8d7;
-	/* attention */
+	/* attention, button selected*/
 	--pink: #d52c82;
-	/* button hover */
 	--brightpink: #ff3997;
-	/* button borders */
 	--darkpink: #992053;
 	--shadow: rgba(0, 0, 0, 0.3);
 }
@@ -37,15 +35,21 @@ h4 {
 a {
 	color: var(--darkblue);
 }
+a:hover {
+	color: var(--brightblue);
+}
+a:focus {
+	outline: 3px solid var(--pink);
+}
 .dog-card a {
 	color: var(--black);
 }
 
-.dog-card article:hover,
-.dog-card article:focus {
-	color: var(--brightblue);
-	border: 3px solid var(--brightblue);
+.dog-card .card-link:hover,
+.dog-card .card-link:focus {
+	border: 3px solid var(--pink);
 	border-radius: 10px;
+	/* outline: 3px solid var(--pink); */
 }
 
 ul li {
@@ -104,39 +108,19 @@ header {
 	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
-#navigation li a {
+#navigation a {
 	display: block;
 	padding: 10px;
 	text-align: center;
 	text-transform: uppercase;
-}
-
-#navigation ul a {
 	color: white;
 	font-weight: bold;
-}
-
-#navigation ul a:hover {
-	color: white;
-	background: var(--brightblue);
-}
-
-:any-link {
 	text-decoration: none;
 }
 
-/* .App-link {
-	color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-} */
+#navigation a:hover {
+	background: var(--brightblue);
+}
 
 /*
 single dog page
@@ -166,7 +150,6 @@ single dog page
 /*
 list of dogs, filtered
 */
-
 .dog-list {
 	padding: 3%;
 	/* grid */
@@ -184,6 +167,7 @@ single dog card for list of dogs
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
 	border-radius: 10px;
+	text-decoration: none;
 	/* grid */
 	display: grid;
 	justify-items: center;
@@ -215,6 +199,7 @@ single dog card for list of dogs
 
 .features {
 	line-height: 2;
+	font-weight: bold;
 	/* grid */
 	grid-area: features;
 	grid-column: 1 / -1;
@@ -223,11 +208,7 @@ single dog card for list of dogs
 	display: grid;
 	grid-gap: 5px;
 	grid-template-columns: 1fr 1fr 1fr;
-}
-
-.features li {
-	align-self: center;
-	justify-self: center;
+	justify-items: center;
 }
 
 .dog-about {
@@ -263,7 +244,12 @@ single dog card for list of dogs
 }
 .dog-contact a {
 	color: white;
+	text-decoration: none;
 }
+.dog-contact a:focus {
+	outline: 3px solid var(--brightblue);
+}
+
 .rm-contact-phone:before {
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -299,7 +285,8 @@ single dog card for list of dogs
 	grid-column: span 2;
 	order: 7;
 }
-/* make video responsive */
+/* make video responsive
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .dog-video .embed-youtube {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
@@ -360,11 +347,12 @@ button a {
 	font-weight: bold;
 }
 
-button:hover,
-button:active,
-button:focus,
-.filters button.selected {
+button:hover {
 	background: var(--brightblue);
+}
+
+.filters button.selected {
+	background: var(--pink);
 }
 
 button:focus {
@@ -398,3 +386,16 @@ button:focus {
 			'button';
 	}
 }
+
+/* .App-link {
+	color: #61dafb;
+} */
+
+/* @keyframes App-logo-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+} */
