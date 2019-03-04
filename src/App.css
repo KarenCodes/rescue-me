@@ -122,6 +122,10 @@ header {
 	background: var(--brightblue);
 }
 
+#navigation .active {
+	background: var(--pink);
+}
+
 /*
 single dog page
 */
