@@ -6,28 +6,26 @@ import Content from './Content';
 import Features from './Features';
 import GoodWith from './GoodWith';
 
-export default class Dog extends React.Component {
-	render = () => {
-		const { dog } = this.props;
-
-		return (
-			<div className="dog-single">
-				<article key={dog.id} className="dog container">
-					<Image dog={dog} size={'medium_large'} />
-					<Name dog={dog} />
-					<Content dog={dog} />
-					<Features dog={dog} />
-					<GoodWith dog={dog} />
-					{/* <button className="more-dogs">
+const Dog = ({ dog }) => {
+	return (
+		<div className="dog-single">
+			<article key={dog.id} className="dog container">
+				<Image dog={dog} size={'medium_large'} />
+				<Name dog={dog} />
+				<Content dog={dog} />
+				<Features dog={dog} />
+				<GoodWith dog={dog} />
+				{/* <button className="more-dogs">
 						<Link to="/">See More Dogs</Link>
 					</button> */}
 
-					<Link to="/" className="button-link">
-						{' '}
-						<button className="more-dogs">See More Dogs</button>
-					</Link>
-				</article>
-			</div>
-		);
-	};
-}
+				<Link to="/" className="button-link">
+					{' '}
+					<button className="more-dogs">See More Dogs</button>
+				</Link>
+			</article>
+		</div>
+	);
+};
+
+export default Dog;
