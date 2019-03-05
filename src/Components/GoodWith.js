@@ -32,7 +32,7 @@ const GoodWith = props => {
 				</ul>
 			</div>
 		);
-	}
+	} else return null;
 };
 
 export default GoodWith;

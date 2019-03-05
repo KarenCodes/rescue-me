@@ -6,13 +6,15 @@ const Features = props => {
 	const size = dog.meta.rescue_me_meta_size;
 	const age = dog.meta.rescue_me_meta_age;
 
-	return (
-		<ul className="features">
-			{gender ? <li>{gender}</li> : null}
-			{age ? <li>{age}</li> : null}
-			{size ? <li>{size}</li> : null}
-		</ul>
-	);
+	if (gender || size || age) {
+		return (
+			<ul className="features">
+				{gender ? <li>{gender}</li> : null}
+				{age ? <li>{age}</li> : null}
+				{size ? <li>{size}</li> : null}
+			</ul>
+		);
+	} else return null;
 };
 
 export default Features;
