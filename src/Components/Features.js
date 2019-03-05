@@ -9,9 +9,9 @@ const Features = props => {
 	if (gender || size || age) {
 		return (
 			<ul className="features">
-				{gender ? <li>{gender}</li> : null}
-				{age ? <li>{age}</li> : null}
-				{size ? <li>{size}</li> : null}
+				{gender ? <li key="gender">{gender}</li> : null}
+				{age ? <li key="age">{age}</li> : null}
+				{size ? <li key="size">{size}</li> : null}
 			</ul>
 		);
 	} else return null;
