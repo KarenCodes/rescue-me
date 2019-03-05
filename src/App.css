@@ -295,6 +295,10 @@ ul.features li:first-child:before {
 	padding-right: 8px;
 }
 
+.rm-contact-email:empty .rm-contact-email:before {
+	content: '';
+}
+
 .good-with {
 	line-height: 2.5;
 	/* grid */
