@@ -12,19 +12,19 @@ const GoodWith = props => {
 				<h4>{dog.title.rendered} is Good With:</h4>
 				<ul>
 					{goodWithDogs ? (
-						<li>
+						<li key="gwdogs">
 							<i className="fas fa-dog" />
 							{goodWithDogs}
 						</li>
 					) : null}
 					{goodWithCats ? (
-						<li>
+						<li key="gwcats">
 							<i className="fas fa-cat" />
 							{goodWithCats}
 						</li>
 					) : null}
 					{goodWithKids ? (
-						<li>
+						<li key="gwkids">
 							<i className="fas fa-child" />
 							{goodWithKids}
 						</li>
