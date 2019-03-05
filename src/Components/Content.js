@@ -29,7 +29,7 @@ const Content = props => {
 				return (
 					<div className="dog-about">
 						<h4>About {dog.title.rendered} </h4>
-						{domToReact(children, parserOptions)}
+						<p>{domToReact(children, parserOptions)}</p>
 					</div>
 				);
 				// video - change class and add title - this one has variable classes so use search for string

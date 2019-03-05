@@ -64,10 +64,14 @@ ul {
 .fa-child:before,
 .fa-cat:before,
 .fa-dog:before,
-.fa-search:before,
 .fa-life-ring:before {
 	padding-right: 5px;
 	font-size: 30px;
+	color: var(--darkblue);
+}
+
+.fa-life-ring:before {
+	color: white;
 }
 
 header {
@@ -184,7 +188,7 @@ single dog card for list of dogs
 }
 
 .dog-image {
-	box-shadow: 0 5px 5px 0 var(--shadow);
+	/* box-shadow: 0 5px 5px 0 var(--shadow); */
 	/* grid */
 	grid-area: image;
 	grid-column: 1 / -1;
@@ -201,6 +205,10 @@ single dog card for list of dogs
 	order: 2;
 }
 
+h2.dog-name {
+	margin: 5px 0;
+}
+
 .features {
 	line-height: 2;
 	font-weight: bold;
@@ -208,21 +216,40 @@ single dog card for list of dogs
 	grid-area: features;
 	grid-column: 1 / -1;
 	order: 3;
-	/* grid within grid */
-	display: grid;
-	grid-gap: 5px;
-	grid-template-columns: 1fr 1fr 1fr;
-	justify-items: center;
+}
+
+ul.features li {
+	display: inline-block;
+	padding-left: 3px;
+	list-style-type: disc;
+}
+
+ul.features li:before {
+	content: '♥';
+	padding-right: 3px;
+	color: var(--darkblue);
+}
+
+ul.features li:first-child:before {
+	padding-left: 0;
+	content: '';
 }
 
 .dog-about {
-	text-align: left;
-	line-height: 1.5;
 	/* grid */
 	grid-area: about;
 	grid-row: span 2;
 	justify-self: start;
 	order: 4;
+}
+.dog-about h4 {
+	margin-top: 0;
+}
+.dog-about p {
+	margin-top: 0;
+	margin-right: 20px;
+	text-align: left;
+	line-height: 1.5;
 }
 
 .dog-contact {
@@ -276,7 +303,7 @@ single dog card for list of dogs
 	order: 6;
 }
 .good-with h4 {
-	margin-bottom: 0;
+	margin: 0;
 }
 .dog-list .good-with h4 {
 	font-size: 16px;
