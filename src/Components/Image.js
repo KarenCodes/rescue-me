@@ -15,7 +15,7 @@ const Image = props => {
 
 		return <img className="dog-image" src={image} alt={alt} />;
 	} else {
-		return <p className="no-image"> No image yet </p>;
+		return <p className="dog-image no-image">Image Not Available</p>;
 	}
 };
 
