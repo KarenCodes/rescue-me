@@ -8,8 +8,10 @@ export default class Header extends React.Component {
 		return (
 			<header>
 				<div className="site-name">
-					<i className="fas fa-life-ring" />
-					Rescue Me
+					<NavLink exact to="/">
+						<i className="fas fa-life-ring" />
+						Rescue Me
+					</NavLink>
 				</div>
 
 				{/* using NavLink instead of link because it adds class="active" to active link
