@@ -18,19 +18,24 @@
 	/* text-align: center; */
 	background: var(--palegray);
 	color: var(--black);
+	font-family: Lato, sans-serif;
 }
 h1 {
 	font-size: 30px;
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
 }
 h2 {
 	font-size: 26px;
+	font-family: 'Roboto', sans-serif;
 }
 h3 {
 	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
 }
 h4 {
 	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 a {
 	color: var(--darkblue);
@@ -39,17 +44,20 @@ a:hover {
 	color: var(--brightblue);
 }
 a:focus {
-	outline: 3px solid var(--pink);
+	outline: 2px solid var(--pink);
 }
 .dog-card a {
 	color: var(--black);
 }
+/* focus is on entire card */
+.dog-card a.card-link:focus {
+	outline: none;
+}
 
-.dog-card .card-link:hover,
-.dog-card .card-link:focus {
+.dog-card:hover,
+.dog-card:focus {
 	border: 3px solid var(--pink);
 	border-radius: 10px;
-	/* outline: 3px solid var(--pink); */
 }
 
 ul li {
@@ -63,49 +71,81 @@ ul {
 
 .fa-child:before,
 .fa-cat:before,
-.fa-dog:before,
-.fa-life-ring:before {
+.fa-dog:before {
 	padding-right: 5px;
 	font-size: 30px;
 	color: var(--darkblue);
 }
 
-.fa-life-ring:before {
-	color: white;
-}
-
 header {
-	background-color: var(--darkblue);
-	/* min-height: 5vh; */
+	background-color: var(--paleblue);
 	padding: 20px 20px 20px 30px;
 	/* grid site name and nav */
 	display: grid;
 	grid-template-columns: 1fr 2fr;
-	/* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 	grid-template-areas: 'sitename nav';
 }
 
 .site-name {
-	color: white;
-	font-size: 30px;
+	color: var(--darkblue);
+	font-size: 32px;
+	font-family: 'Coming Soon', cursive;
+	font-weight: bold;
 	grid-area: sitename;
 }
 
-.site-name .fa-dog:before,
+.site-name a {
+	text-decoration: none;
+}
+
 .site-name .fa-life-ring {
-	/* padding: 0 10px; */
-	font-size: 30px;
-	color: white;
+	font-size: 32px;
+	margin-right: 10px;
+	color: var(--darkblue);
+}
+
+.site-name i {
+	/* animation spin */
+	animation-name: icon-spin;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.site-name i:hover,
+.site-name i:focus {
+	/* animation spin reverse */
+	animation-name: icon-reverse;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes icon-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes icon-reverse {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
 }
 
 #navigation ul {
 	margin: 0;
 	padding: 0;
 	font-size: 20px;
-	color: white;
+	color: var(--darkblue);
 	/* grid */
 	grid-area: nav;
-
 	/* grid within header grid */
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -117,17 +157,21 @@ header {
 	padding: 10px;
 	text-align: center;
 	text-transform: uppercase;
-	color: white;
+	color: var(--darkblue);
 	font-weight: bold;
 	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
 }
 
 #navigation a:hover {
-	background: var(--brightblue);
+	/* background: var(--brightblue); */
+	color: var(--pink);
 }
 
+/* active class set by NavLink */
 #navigation .active {
-	background: var(--pink);
+	/* background: var(--pink); */
+	color: var(--pink);
 }
 
 /*
@@ -166,15 +210,16 @@ list of dogs, filtered
 	justify-items: center;
 	grid-gap: 20px;
 }
+
+li.dog-card {
+	box-shadow: 0 1px 1px 0 var(--shadow);
+	background: var(--paleblue);
+	/* border-radius: 10px; */
+}
 /*
 single dog card for list of dogs
 */
 .dog-list .doglist.container .card-link {
-	/* padding: 10px 2%; */
-	/* max-width: 300px; */
-	box-shadow: 0 1px 1px 0 var(--shadow);
-	background: var(--paleblue);
-	border-radius: 10px;
 	text-decoration: none;
 	/* grid */
 	display: grid;
@@ -391,7 +436,7 @@ button:hover {
 }
 
 button:focus {
-	outline: 3px solid var(--pink);
+	outline: 2px solid var(--pink);
 }
 /* media queries - smaller screen */
 @media only screen and (max-width: 650px) {
@@ -401,6 +446,9 @@ button:focus {
 			'sitename'
 			'nav';
 		justify-items: center;
+	}
+	.site-name {
+		margin-bottom: 10px;
 	}
 	#navigation ul {
 		grid-template-columns: 1fr;
@@ -424,13 +472,4 @@ button:focus {
 
 /* .App-link {
 	color: #61dafb;
-} */
-
-/* @keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
 } */
