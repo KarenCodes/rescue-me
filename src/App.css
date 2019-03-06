@@ -214,8 +214,23 @@ list of dogs, filtered
 li.dog-card {
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
-	/* border-radius: 10px; */
+	border-radius: 10px;
 }
+
+.dog-card a {
+	color: var(--black);
+}
+/* focus is on entire card */
+.dog-card a.card-link:focus {
+	outline: none;
+}
+
+.dog-card:hover,
+.dog-card:focus {
+	border: 3px solid var(--pink);
+	border-radius: 10px;
+}
+
 /*
 single dog card for list of dogs
 */
@@ -233,12 +248,10 @@ single dog card for list of dogs
 }
 
 .dog-image {
-	/* box-shadow: 0 5px 5px 0 var(--shadow); */
 	/* grid */
 	grid-area: image;
 	grid-column: 1 / -1;
 	order: 1;
-	justify-self: center;
 	max-width: 100%;
 }
 
