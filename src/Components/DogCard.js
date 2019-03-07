@@ -5,10 +5,9 @@ import Image from './Image';
 import Features from './Features';
 import GoodWith from './GoodWith';
 
-export default class DogCard extends React.Component {
-	render = () => {
-		const { dog } = this.props;
-
+const DogCard = ({ dog }) => {
+	// if dog doesn't have a name don't show it
+	if (dog.title.rendered) {
 		return (
 			<li className="dog-card" key={dog.id}>
 				<article key={dog.id} className="doglist container">
@@ -21,5 +20,7 @@ export default class DogCard extends React.Component {
 				</article>
 			</li>
 		);
-	};
-}
+	} else return null;
+};
+
+export default DogCard;

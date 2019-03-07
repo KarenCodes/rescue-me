@@ -7,11 +7,9 @@
 	--paleblue: #eaeef2;
 	/* links */
 	--brightblue: #4ba8d7;
-	/* attention */
+	/* attention, button selected*/
 	--pink: #d52c82;
-	/* button hover */
 	--brightpink: #ff3997;
-	/* button borders */
 	--darkpink: #992053;
 	--shadow: rgba(0, 0, 0, 0.3);
 }
@@ -20,31 +18,45 @@
 	/* text-align: center; */
 	background: var(--palegray);
 	color: var(--black);
+	font-family: Lato, sans-serif;
 }
 h1 {
 	font-size: 30px;
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
 }
 h2 {
 	font-size: 26px;
+	font-family: 'Roboto', sans-serif;
 }
 h3 {
 	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
 }
 h4 {
 	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
 }
 a {
 	color: var(--darkblue);
 }
+a:hover {
+	color: var(--brightblue);
+}
+a:focus {
+	outline: 2px solid var(--pink);
+}
 .dog-card a {
 	color: var(--black);
 }
+/* focus is on entire card */
+.dog-card a.card-link:focus {
+	outline: none;
+}
 
-.dog-card article:hover,
-.dog-card article:focus {
-	color: var(--brightblue);
-	border: 3px solid var(--brightblue);
+.dog-card:hover,
+.dog-card:focus {
+	border: 3px solid var(--pink);
 	border-radius: 10px;
 }
 
@@ -59,81 +71,112 @@ ul {
 
 .fa-child:before,
 .fa-cat:before,
-.fa-dog:before,
-.fa-search:before,
-.fa-life-ring:before {
+.fa-dog:before {
 	padding-right: 5px;
 	font-size: 30px;
+	color: var(--darkblue);
 }
 
 header {
-	background-color: var(--darkblue);
-	/* min-height: 5vh; */
+	background-color: var(--paleblue);
 	padding: 20px 20px 20px 30px;
 	/* grid site name and nav */
 	display: grid;
-	grid-template-columns: minmax(100px, 1fr) 1fr;
+	grid-template-columns: 1fr 2fr;
 	grid-template-areas: 'sitename nav';
 }
 
 .site-name {
-	color: white;
-	font-size: 30px;
+	color: var(--darkblue);
+	font-size: 32px;
+	font-family: 'Coming Soon', cursive;
+	font-weight: bold;
 	grid-area: sitename;
 }
 
-.site-name .fa-dog:before,
-.site-name .fa-life-ring {
-	/* padding: 0 10px; */
-	font-size: 30px;
-	color: white;
-}
-
-#navigation ul {
-	margin: 0;
-	padding: 0;
-	font-size: 20px;
-	color: white;
-	/* grid within header grid */
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-}
-
-#navigation li a {
-	display: block;
-	padding: 10px;
-	text-align: center;
-	text-transform: uppercase;
-	grid-area: nav;
-}
-
-#navigation ul a {
-	color: white;
-}
-
-#navigation ul a:hover {
-	color: white;
-	background: var(--brightblue);
-}
-
-:any-link {
+.site-name a {
 	text-decoration: none;
 }
 
-/* .App-link {
-	color: #61dafb;
-} */
+.site-name .fa-life-ring {
+	font-size: 32px;
+	margin-right: 10px;
+	color: var(--darkblue);
+}
 
-/* @keyframes App-logo-spin {
+.site-name i {
+	/* animation spin */
+	animation-name: icon-spin;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.site-name i:hover,
+.site-name i:focus {
+	/* animation spin reverse */
+	animation-name: icon-reverse;
+	animation-duration: 4000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes icon-spin {
 	from {
 		transform: rotate(0deg);
 	}
 	to {
 		transform: rotate(360deg);
 	}
-} */
+}
 
+@keyframes icon-reverse {
+	from {
+		transform: rotate(360deg);
+	}
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+#navigation ul {
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	color: var(--darkblue);
+	/* grid */
+	grid-area: nav;
+	/* grid within header grid */
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+#navigation a {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--darkblue);
+	font-weight: bold;
+	text-decoration: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+#navigation a:hover {
+	/* background: var(--brightblue); */
+	color: var(--pink);
+}
+
+/* active class set by NavLink */
+#navigation .active {
+	/* background: var(--pink); */
+	color: var(--pink);
+}
+
+/*
+single dog page
+*/
 .dog.container {
 	padding: 40px 10%;
 	max-width: 800px;
@@ -156,6 +199,9 @@ header {
 	grid-gap: 10px;
 }
 
+/*
+list of dogs, filtered
+*/
 .dog-list {
 	padding: 3%;
 	/* grid */
@@ -165,12 +211,31 @@ header {
 	grid-gap: 20px;
 }
 
-.dog-list .doglist.container .card-link {
-	/* padding: 10px 2%; */
-	/* max-width: 300px; */
+li.dog-card {
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
 	border-radius: 10px;
+}
+
+.dog-card a {
+	color: var(--black);
+}
+/* focus is on entire card */
+.dog-card a.card-link:focus {
+	outline: none;
+}
+
+.dog-card:hover,
+.dog-card:focus {
+	border: 3px solid var(--pink);
+	border-radius: 10px;
+}
+
+/*
+single dog card for list of dogs
+*/
+.dog-list .doglist.container .card-link {
+	text-decoration: none;
 	/* grid */
 	display: grid;
 	justify-items: center;
@@ -183,12 +248,10 @@ header {
 }
 
 .dog-image {
-	box-shadow: 0 5px 5px 0 var(--shadow);
 	/* grid */
 	grid-area: image;
 	grid-column: 1 / -1;
 	order: 1;
-	justify-self: center;
 	max-width: 100%;
 }
 
@@ -200,31 +263,51 @@ header {
 	order: 2;
 }
 
+h2.dog-name {
+	margin: 5px 0;
+}
+
 .features {
 	line-height: 2;
+	font-weight: bold;
 	/* grid */
 	grid-area: features;
 	grid-column: 1 / -1;
 	order: 3;
-	/* grid within grid */
-	display: grid;
-	grid-gap: 5px;
-	grid-template-columns: 1fr 1fr 1fr;
 }
 
-.features li {
-	align-self: center;
-	justify-self: center;
+ul.features li {
+	display: inline-block;
+	padding-left: 3px;
+	list-style-type: disc;
+}
+
+ul.features li:before {
+	content: '♥';
+	padding-right: 3px;
+	color: var(--darkblue);
+}
+
+ul.features li:first-child:before {
+	padding-left: 0;
+	content: '';
 }
 
 .dog-about {
-	text-align: left;
-	line-height: 1.5;
 	/* grid */
 	grid-area: about;
 	grid-row: span 2;
 	justify-self: start;
 	order: 4;
+}
+.dog-about h4 {
+	margin-top: 0;
+}
+.dog-about p {
+	margin-top: 0;
+	margin-right: 20px;
+	text-align: left;
+	line-height: 1.5;
 }
 
 .dog-contact {
@@ -239,6 +322,7 @@ header {
 	/* grid */
 	grid-area: contact;
 	justify-self: stretch;
+	align-self: center;
 	order: 5;
 }
 .dog-contact:hover {
@@ -249,7 +333,12 @@ header {
 }
 .dog-contact a {
 	color: white;
+	text-decoration: none;
 }
+.dog-contact a:focus {
+	outline: 3px solid var(--brightblue);
+}
+
 .rm-contact-phone:before {
 	font-family: 'Font Awesome 5 Free';
 	font-weight: 900;
@@ -264,6 +353,10 @@ header {
 	padding-right: 8px;
 }
 
+.rm-contact-email:empty .rm-contact-email:before {
+	content: '';
+}
+
 .good-with {
 	line-height: 2.5;
 	/* grid */
@@ -272,7 +365,7 @@ header {
 	order: 6;
 }
 .good-with h4 {
-	margin-bottom: 0;
+	margin: 0;
 }
 .dog-list .good-with h4 {
 	font-size: 16px;
@@ -285,6 +378,8 @@ header {
 	grid-column: span 2;
 	order: 7;
 }
+/* make video responsive
+https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .dog-video .embed-youtube {
 	position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
@@ -308,13 +403,27 @@ header {
 
 .filters {
 	text-align: center;
+	max-width: 650px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.filters h2 {
+	font-size: 22px;
+	font-weight: normal;
+}
+
+.filters ul {
+	margin: 0 auto;
+	/* grid */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	/* justify-items: center; */
+	grid-gap: 5px;
 }
 
 .filters button {
 	margin-right: 5px;
-}
-
-.card-link {
 }
 
 button {
@@ -331,12 +440,49 @@ button a {
 	font-weight: bold;
 }
 
-button:hover,
-button:active,
-button:focus {
+button:hover {
 	background: var(--brightblue);
 }
 
-button:focus {
-	outline: 3px solid var(--pink);
+.filters button.selected {
+	background: var(--pink);
 }
+
+button:focus {
+	outline: 2px solid var(--pink);
+}
+/* media queries - smaller screen */
+@media only screen and (max-width: 650px) {
+	header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'sitename'
+			'nav';
+		justify-items: center;
+	}
+	.site-name {
+		margin-bottom: 10px;
+	}
+	#navigation ul {
+		grid-template-columns: 1fr;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.dog.container {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+			'image'
+			'name'
+			'features'
+			'about'
+			'about'
+			'contact'
+			'goodwith'
+			'video'
+			'button';
+	}
+}
+
+/* .App-link {
+	color: #61dafb;
+} */

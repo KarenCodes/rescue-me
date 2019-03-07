@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import { ReactComponent as Logo } from './logo.svg';
 
 export default class Header extends React.Component {
@@ -7,20 +8,26 @@ export default class Header extends React.Component {
 		return (
 			<header>
 				<div className="site-name">
-					<i className="fas fa-life-ring" />
-					Rescue Me
+					<NavLink exact to="/">
+						<i className="fas fa-life-ring" />
+						Rescue Me
+					</NavLink>
 				</div>
 
+				{/* using NavLink instead of link because it adds class="active" to active link
+      note "exact" for home page to prevent it from matching other links  */}
 				<nav id="navigation">
 					<ul>
 						<li>
-							<Link to="/">Dogs</Link>
+							<NavLink exact to="/">
+								Dogs
+							</NavLink>
 						</li>
 						<li>
-							<Link to="/form">Form</Link>
+							<NavLink to="/form">Form</NavLink>
 						</li>
 						<li>
-							<Link to="/about">About</Link>
+							<NavLink to="/about">About</NavLink>
 						</li>
 					</ul>
 				</nav>
