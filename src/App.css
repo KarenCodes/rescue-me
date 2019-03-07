@@ -209,6 +209,7 @@ li.dog-card {
 .dog-card:focus {
 	border: 3px solid var(--pink);
 	border-radius: 10px;
+	outline: 2px solid var(--pink);
 }
 
 /*------------------single dog card for list of dogs-----------------------*/
@@ -385,27 +386,35 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .filters {
 	text-align: center;
 	max-width: 650px;
-	padding: 10px;
+	/* padding: 10px; */
 	margin: 0 auto;
 }
 
 .filters h2 {
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: normal;
+	margin-bottom: 0px;
 }
 
 .filters ul,
 ul.filters.good-with-filters {
 	margin: 0 auto;
+	padding: 0;
 	/* grid */
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-	/* justify-items: center; */
-	grid-gap: 5px;
-}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
 
+	/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+	/* justify-items: center; */
+	/* grid-gap: 10px; */
+}
 .filters button {
-	margin-right: 5px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+	margin: 10px 10px;
 }
 
 button {
@@ -438,7 +447,7 @@ button:focus {
 /* https://github.com/springload/react-accessible-accordion */
 
 .accordion {
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid var(--shadow);
 	border-radius: 2px;
 	text-align: center;
 	max-width: 650px;
@@ -447,16 +456,20 @@ button:focus {
 }
 
 .accordion__item + .accordion__item {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-top: 1px solid var(--shadow);
 }
 
 .accordion__item--has-icon {
 	position: relative;
 }
 
+.accordion__title:focus {
+	outline: 2px solid var(--pink);
+}
+
 .accordion__title {
-	background-color: #f4f4f4;
-	color: #444;
+	background-color: var(--palegray);
+	color: var(--darkblue);
 	cursor: pointer;
 	padding: 10px;
 	width: 100%;
@@ -466,7 +479,11 @@ button:focus {
 }
 
 .accordion__title:hover {
-	background-color: #ddd;
+	color: var(--pink);
+}
+
+.accordion:focus {
+	outline: 3px var(--pink);
 }
 
 .accordion__body {
@@ -606,6 +623,9 @@ button:focus {
 	#navigation ul {
 		grid-template-columns: 1fr;
 	}
+	.accordion {
+		margin: 0 20px;
+	}
 }
 @media only screen and (max-width: 600px) {
 	.dog.container {
@@ -621,4 +641,13 @@ button:focus {
 			'video'
 			'button';
 	}
+}
+@media only screen and (max-width: 560px) {
+	/* .filters button {
+		font-size: 16px;
+	}
+	.filters h2 {
+		font-size: 16px;
+		font-weight: normal;
+	} */
 }
