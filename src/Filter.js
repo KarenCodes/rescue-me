@@ -1,5 +1,5 @@
 import React from 'react';
-import { FILTERS } from './Helpers.js';
+import { FILTERS, SINGLE_FILTERS } from './Helpers.js';
 
 const Button = props => {
   return (
@@ -8,12 +8,31 @@ const Button = props => {
     </button>
   );
 };
-const isFilterSelected = (conditions, value) => {
-  for (let group in conditions) {
-    if (conditions[group].includes(value)) {
-      return true;
-    }
+const FilterButton = props => {
+  return (
+    <Button
+      className={
+        isFilterSelected(
+          props.props.conditions,
+          props.group.name,
+          props.value.name
+        )
+          ? 'selected'
+          : ''
+      }
+      onClick={() =>
+        toggleFilter(props.props, props.group.name, props.value.name)
+      }
+      text={props.text}
+    />
+  );
+};
+const isFilterSelected = (conditions, group, value) => {
+  if (!conditions[group]) return false;
+  if (conditions[group].includes(value)) {
+    return true;
   }
+
   return false;
 };
 // Adds or removes a filter value to the list
@@ -40,28 +59,49 @@ const toggleFilter = (props, group, value) => {
   return true;
 };
 export default class Filter extends React.Component {
+  // Function to display top filters
+  getTopButtons = () => {
+    return (
+      //Buttons
+      <div>
+        <ul key="top" className="filters">
+          {SINGLE_FILTERS.map(group => {
+            return (
+              // Display filters in group
+              group.values.map(value => (
+                <FilterButton
+                  key={value.name}
+                  props={this.props}
+                  group={group}
+                  value={value}
+                  text={group.label}
+                />
+              ))
+            );
+          })}
+        </ul>
+      </div>
+    );
+  };
   // Function to display buttons with filters for dogs
   getButtons = () => {
     return (
       //Buttons
       <div>
-        <ul className="filters">
-          {FILTERS.map(group => {
+        <ul key="secondary" className="filters">
+          {// Display groups of filters
+          FILTERS.map(group => {
             return (
               <li key={group.name}>
                 <h2>{group.label}</h2>
                 <ul>
-                  {group.values.map(value => (
-                    <Button
+                  {// Display filters in group
+                  group.values.map(value => (
+                    <FilterButton
                       key={value.name}
-                      className={
-                        isFilterSelected(this.props.conditions, value.name)
-                          ? 'selected'
-                          : ''
-                      }
-                      onClick={() =>
-                        toggleFilter(this.props, group.name, value.name)
-                      }
+                      props={this.props}
+                      group={group}
+                      value={value}
                       text={value.label}
                     />
                   ))}
@@ -74,6 +114,11 @@ export default class Filter extends React.Component {
     );
   };
   render = () => {
-    return <div>{this.getButtons()}</div>;
+    return (
+      <div>
+        {this.getTopButtons()}
+        {this.getButtons()}
+      </div>
+    );
   };
 }
