@@ -14,6 +14,15 @@
 	--shadow: rgba(0, 0, 0, 0.3);
 }
 
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 .body {
 	/* text-align: center; */
 	background: var(--palegray);
@@ -49,10 +58,6 @@ a:focus {
 .dog-card a {
 	color: var(--black);
 }
-/* focus is on entire card */
-.dog-card a.card-link:focus {
-	outline: none;
-}
 
 .dog-card:hover,
 .dog-card:focus {
@@ -76,7 +81,7 @@ ul {
 	font-size: 30px;
 	color: var(--darkblue);
 }
-
+/* -----------------------header-----------------------------------*/
 header {
 	background-color: var(--paleblue);
 	padding: 20px 20px 20px 30px;
@@ -104,18 +109,10 @@ header {
 	color: var(--darkblue);
 }
 
-.site-name i {
-	/* animation spin */
-	animation-name: icon-spin;
-	animation-duration: 4000ms;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
 .site-name i:hover,
 .site-name i:focus {
-	/* animation spin reverse */
-	animation-name: icon-reverse;
+	/* animation spin icon */
+	animation-name: icon-spin;
 	animation-duration: 4000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
@@ -129,16 +126,7 @@ header {
 		transform: rotate(360deg);
 	}
 }
-
-@keyframes icon-reverse {
-	from {
-		transform: rotate(360deg);
-	}
-	to {
-		transform: rotate(0deg);
-	}
-}
-
+/*-------------------------navigation-------------------------------*/
 #navigation ul {
 	margin: 0;
 	padding: 0;
@@ -174,11 +162,9 @@ header {
 	color: var(--pink);
 }
 
-/*
-single dog page
-*/
+/* ----------------------single dog page------------------------------ */
 .dog.container {
-	padding: 40px 10%;
+	padding: 40px 3%;
 	max-width: 800px;
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
@@ -199,9 +185,7 @@ single dog page
 	grid-gap: 10px;
 }
 
-/*
-list of dogs, filtered
-*/
+/* ----------------------------list of dogs------------------------------*/
 .dog-list {
 	padding: 3%;
 	/* grid */
@@ -220,20 +204,15 @@ li.dog-card {
 .dog-card a {
 	color: var(--black);
 }
-/* focus is on entire card */
-.dog-card a.card-link:focus {
-	outline: none;
-}
 
 .dog-card:hover,
 .dog-card:focus {
 	border: 3px solid var(--pink);
 	border-radius: 10px;
+	outline: 2px solid var(--pink);
 }
 
-/*
-single dog card for list of dogs
-*/
+/*------------------single dog card for list of dogs-----------------------*/
 .dog-list .doglist.container .card-link {
 	text-decoration: none;
 	/* grid */
@@ -247,6 +226,7 @@ single dog card for list of dogs
 		'goodwith';
 }
 
+/*-----------------dog components ------------------------------------------*/
 .dog-image {
 	/* grid */
 	grid-area: image;
@@ -315,7 +295,7 @@ ul.features li:first-child:before {
 	border: 1px solid var(--shadow);
 	border-radius: 5px;
 	color: white;
-	padding: 5px;
+	padding: 3%;
 	text-align: center;
 	font-weight: bold;
 	text-shadow: 0.5px 0.5px var(--shadow);
@@ -401,37 +381,48 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 	order: 8;
 }
 
+/*--------------------filters and buttons-----------------------------------*/
+
 .filters {
 	text-align: center;
 	max-width: 650px;
-	padding: 10px;
+	/* padding: 10px; */
 	margin: 0 auto;
 }
 
 .filters h2 {
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: normal;
+	margin-bottom: 0px;
 }
 
-.filters ul {
+.filters ul,
+ul.filters.good-with-filters {
 	margin: 0 auto;
+	padding: 0;
 	/* grid */
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-	/* justify-items: center; */
-	grid-gap: 5px;
-}
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-flow: row wrap;
 
+	/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+	/* justify-items: center; */
+	/* grid-gap: 10px; */
+}
 .filters button {
-	margin-right: 5px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 0;
+	margin: 10px 10px;
 }
 
 button {
 	background: var(--darkblue);
 	color: white;
 	font-weight: bold;
-	font-size: 20px;
-	padding: 20px;
+	font-size: 18px;
+	padding: 10px;
 	border-radius: 5px;
 }
 
@@ -451,7 +442,173 @@ button:hover {
 button:focus {
 	outline: 2px solid var(--pink);
 }
-/* media queries - smaller screen */
+
+/* ---------------------Filter toggle/accordion--------------------------*/
+/* https://github.com/springload/react-accessible-accordion */
+
+.accordion {
+	border: 1px solid var(--shadow);
+	border-radius: 2px;
+	text-align: center;
+	max-width: 650px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.accordion__item + .accordion__item {
+	border-top: 1px solid var(--shadow);
+}
+
+.accordion__item--has-icon {
+	position: relative;
+}
+
+.accordion__title:focus {
+	outline: 2px solid var(--pink);
+}
+
+.accordion__title {
+	background-color: var(--palegray);
+	color: var(--darkblue);
+	cursor: pointer;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	border: none;
+	position: relative;
+}
+
+.accordion__title:hover {
+	color: var(--pink);
+}
+
+.accordion:focus {
+	outline: 3px var(--pink);
+}
+
+.accordion__body {
+	padding: 20px;
+	display: block;
+	animation: fadein 0.35s ease-in;
+}
+
+.accordion__body--hidden {
+	display: none;
+	opacity: 0;
+	animation: fadein 0.35s ease-in;
+}
+
+.accordion__title > *:last-child,
+.accordion__body > *:last-child {
+	margin-bottom: 0;
+}
+
+.accordion__arrow {
+	display: inline-block;
+	width: 24px;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -6px;
+}
+
+.accordion__arrow::after,
+.accordion__arrow::before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 10px;
+	height: 2px;
+	background-color: currentColor;
+	content: '';
+}
+
+.accordion__arrow::before {
+	left: 4px;
+	transform: rotate(45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::before,
+[aria-selected='true'] .accordion__arrow::before {
+	transform: rotate(-45deg);
+}
+
+.accordion__arrow::after {
+	right: 4px;
+	transform: rotate(-45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::after,
+[aria-selected='true'] .accordion__arrow::after {
+	transform: rotate(45deg);
+}
+
+.accordion__arrow::before,
+.accordion__arrow::after {
+	transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes move-down {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(5px);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes move-up {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-5px);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.accordion__title--animated:hover .accordion__arrow {
+	animation-name: move-down;
+	animation-duration: 1.5s;
+}
+
+.accordion__title--animated[aria-expanded='true']:hover .accordion__arrow {
+	animation-name: move-up;
+	animation-duration: 1.5s;
+}
+/* ------------------media queries - smaller screen------------------------- */
 @media only screen and (max-width: 650px) {
 	header {
 		grid-template-columns: 1fr;
@@ -465,6 +622,9 @@ button:focus {
 	}
 	#navigation ul {
 		grid-template-columns: 1fr;
+	}
+	.accordion {
+		margin: 0 20px;
 	}
 }
 @media only screen and (max-width: 600px) {
@@ -482,7 +642,12 @@ button:focus {
 			'button';
 	}
 }
-
-/* .App-link {
-	color: #61dafb;
-} */
+@media only screen and (max-width: 560px) {
+	/* .filters button {
+		font-size: 16px;
+	}
+	.filters h2 {
+		font-size: 16px;
+		font-weight: normal;
+	} */
+}

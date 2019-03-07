@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-// import { ReactComponent as Logo } from './logo.svg';
 
 export default class Header extends React.Component {
 	render = () => {

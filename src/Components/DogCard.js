@@ -9,9 +9,9 @@ const DogCard = ({ dog }) => {
 	// if dog doesn't have a name don't show it
 	if (dog.title.rendered) {
 		return (
-			<li className="dog-card" key={dog.id}>
+			<li className="dog-card" key={dog.id} tabIndex="0">
 				<article key={dog.id} className="doglist container">
-					<Link className="card-link" key={dog.id} to={`/dog/${dog.slug}`}>
+					<Link className="card-link" tabIndex="-1" key={dog.id} to={`/dog/${dog.slug}`}>
 						<Image dog={dog} size={'medium'} />
 						<Name dog={dog} />
 						<Features dog={dog} />

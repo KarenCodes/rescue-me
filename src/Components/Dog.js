@@ -15,9 +15,6 @@ const Dog = ({ dog }) => {
 				<Content dog={dog} />
 				<Features dog={dog} />
 				<GoodWith dog={dog} />
-				{/* <button className="more-dogs">
-						<Link to="/">See More Dogs</Link>
-					</button> */}
 
 				<Link to="/" className="button-link">
 					{' '}
