@@ -53,7 +53,7 @@ export default class Filter extends React.Component {
 		return (
 			//Buttons
 			<div>
-				<ul key="top" className="filters">
+				<ul key="top" className="filters good-with-filters">
 					{SINGLE_FILTERS.map(group => {
 						return (
 							// Display filters in group

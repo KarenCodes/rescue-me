@@ -389,18 +389,17 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 	margin: 0 auto;
 }
 
-.filters h3,
-h3.good-with-filters {
+.filters h2 {
 	font-size: 22px;
 	font-weight: normal;
 }
 
 .filters ul,
-ul.good-with-filters {
+ul.filters.good-with-filters {
 	margin: 0 auto;
 	/* grid */
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	/* justify-items: center; */
 	grid-gap: 5px;
 }
@@ -413,8 +412,8 @@ button {
 	background: var(--darkblue);
 	color: white;
 	font-weight: bold;
-	font-size: 20px;
-	padding: 20px;
+	font-size: 18px;
+	padding: 10px;
 	border-radius: 5px;
 }
 
