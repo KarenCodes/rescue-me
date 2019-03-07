@@ -14,6 +14,15 @@
 	--shadow: rgba(0, 0, 0, 0.3);
 }
 
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
 .body {
 	/* text-align: center; */
 	background: var(--palegray);
@@ -104,18 +113,10 @@ header {
 	color: var(--darkblue);
 }
 
-.site-name i {
-	/* animation spin */
-	animation-name: icon-spin;
-	animation-duration: 4000ms;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
 .site-name i:hover,
 .site-name i:focus {
-	/* animation spin reverse */
-	animation-name: icon-reverse;
+	/* animation spin icon */
+	animation-name: icon-spin;
 	animation-duration: 4000ms;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
@@ -127,15 +128,6 @@ header {
 	}
 	to {
 		transform: rotate(360deg);
-	}
-}
-
-@keyframes icon-reverse {
-	from {
-		transform: rotate(360deg);
-	}
-	to {
-		transform: rotate(0deg);
 	}
 }
 
@@ -178,7 +170,7 @@ header {
 single dog page
 */
 .dog.container {
-	padding: 40px 10%;
+	padding: 40px 3%;
 	max-width: 800px;
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
@@ -315,7 +307,7 @@ ul.features li:first-child:before {
 	border: 1px solid var(--shadow);
 	border-radius: 5px;
 	color: white;
-	padding: 5px;
+	padding: 3%;
 	text-align: center;
 	font-weight: bold;
 	text-shadow: 0.5px 0.5px var(--shadow);
@@ -408,12 +400,14 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 	margin: 0 auto;
 }
 
-.filters h2 {
+.filters h3,
+h3.good-with-filters {
 	font-size: 22px;
 	font-weight: normal;
 }
 
-.filters ul {
+.filters ul,
+ul.good-with-filters {
 	margin: 0 auto;
 	/* grid */
 	display: grid;
@@ -483,6 +477,163 @@ button:focus {
 	}
 }
 
-/* .App-link {
-	color: #61dafb;
-} */
+/**
+* ----------------------------------------------
+* Filter toggle/accordion styles
+* ----------------------------------------------
+*/
+
+.accordion {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 2px;
+	text-align: center;
+	max-width: 650px;
+	padding: 10px;
+	margin: 0 auto;
+}
+
+.accordion__item + .accordion__item {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__item--has-icon {
+	position: relative;
+}
+
+.accordion__title {
+	background-color: #f4f4f4;
+	color: #444;
+	cursor: pointer;
+	padding: 10px;
+	width: 100%;
+	text-align: center;
+	border: none;
+	position: relative;
+}
+
+.accordion__title:hover {
+	background-color: #ddd;
+}
+
+.accordion__body {
+	padding: 20px;
+	display: block;
+	animation: fadein 0.35s ease-in;
+}
+
+.accordion__body--hidden {
+	display: none;
+	opacity: 0;
+	animation: fadein 0.35s ease-in;
+}
+
+.accordion__title > *:last-child,
+.accordion__body > *:last-child {
+	margin-bottom: 0;
+}
+
+.accordion__arrow {
+	display: inline-block;
+	width: 24px;
+	height: 12px;
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-top: -6px;
+}
+
+.accordion__arrow::after,
+.accordion__arrow::before {
+	display: block;
+	position: absolute;
+	top: 50%;
+	width: 10px;
+	height: 2px;
+	background-color: currentColor;
+	content: '';
+}
+
+.accordion__arrow::before {
+	left: 4px;
+	transform: rotate(45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::before,
+[aria-selected='true'] .accordion__arrow::before {
+	transform: rotate(-45deg);
+}
+
+.accordion__arrow::after {
+	right: 4px;
+	transform: rotate(-45deg);
+}
+
+[aria-expanded='true'] .accordion__arrow::after,
+[aria-selected='true'] .accordion__arrow::after {
+	transform: rotate(45deg);
+}
+
+.accordion__arrow::before,
+.accordion__arrow::after {
+	transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes move-down {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(5px);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes move-up {
+	0% {
+		transform: translateY(0);
+	}
+	10% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-5px);
+	}
+	30% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.accordion__title--animated:hover .accordion__arrow {
+	animation-name: move-down;
+	animation-duration: 1.5s;
+}
+
+.accordion__title--animated[aria-expanded='true']:hover .accordion__arrow {
+	animation-name: move-up;
+	animation-duration: 1.5s;
+}
