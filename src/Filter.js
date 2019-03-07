@@ -1,7 +1,6 @@
 import React from 'react';
 import { FILTERS, SINGLE_FILTERS } from './Helpers.js';
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
-// import 'react-accessible-accordion/dist/fancy-example.css';
 
 const Button = props => {
 	return (
@@ -53,23 +52,19 @@ export default class Filter extends React.Component {
 	getTopButtons = () => {
 		return (
 			//Buttons
-			//todo: add correct group name
 			<div>
-				<h3 className="good-with-filters">Good With</h3>
-				<ul key="top" className="filters good-with-filters">
+				<ul key="top" className="filters">
 					{SINGLE_FILTERS.map(group => {
 						return (
 							// Display filters in group
 							group.values.map(value => (
-								<li key={value}>
-									<FilterButton
-										key={value.name}
-										props={this.props}
-										group={group}
-										value={value}
-										text={group.label}
-									/>
-								</li>
+								<FilterButton
+									key={value.name}
+									props={this.props}
+									group={group}
+									value={value}
+									text={group.label}
+								/>
 							))
 						);
 					})}
@@ -87,7 +82,7 @@ export default class Filter extends React.Component {
 					FILTERS.map(group => {
 						return (
 							<li key={group.name}>
-								<h3>{group.label}</h3>
+								<h2>{group.label}</h2>
 								<ul>
 									{// Display filters in group
 									group.values.map(value => (
