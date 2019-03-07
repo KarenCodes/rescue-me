@@ -5,10 +5,39 @@ const WP_URL =
   'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs?_embed';
 // Metadata
 //TODO: Convert Array into array of objects to add display name for meta
+export const SINGLE_FILTERS = [
+  {
+    label: 'Kids',
+    name: 'rescue_me_meta_good_with_kids',
+    values: [
+      {
+        label: 'Kids',
+        name: true
+      }
+    ]
+  },
+  {
+    label: 'Cats',
+    name: 'rescue_me_meta_good_with_cats',
+    values: [
+      {
+        label: 'Cats',
+        name: true
+      }
+    ]
+  },
+  {
+    label: 'Dogs',
+    name: 'rescue_me_meta_good_with_dogs',
+    values: [
+      {
+        label: 'Dogs',
+        name: true
+      }
+    ]
+  }
+];
 export const FILTERS = [
-  // { name: 'good_with',
-  //   values: ['dogs', 'cats','kids'],
-  // },
   {
     label: 'Gender',
     name: 'rescue_me_meta_gender',
