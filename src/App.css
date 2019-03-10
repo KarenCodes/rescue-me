@@ -29,6 +29,9 @@ html {
 	color: var(--black);
 	font-family: Lato, sans-serif;
 }
+main {
+	padding: 1%;
+}
 h1 {
 	font-size: 30px;
 	text-align: center;
@@ -212,7 +215,7 @@ li.dog-card {
 	outline: 2px solid var(--pink);
 }
 
-/*------------------single dog card for list of dogs-----------------------*/
+/*----------------single dog card for list of dogs-----------------------*/
 .dog-list .doglist.container .card-link {
 	text-decoration: none;
 	/* grid */
@@ -226,7 +229,7 @@ li.dog-card {
 		'goodwith';
 }
 
-/*-----------------dog components ------------------------------------------*/
+/*---------------dog components ------------------------------------------*/
 .dog-image {
 	/* grid */
 	grid-area: image;
@@ -381,7 +384,7 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 	order: 8;
 }
 
-/*--------------------filters and buttons-----------------------------------*/
+/*------------------filters and buttons-----------------------------------*/
 
 .filters {
 	text-align: center;
@@ -448,7 +451,22 @@ button:hover {
 button:focus {
 	outline: 2px solid var(--pink);
 }
-
+/*------------------------Match Form-----------------------------------*/
+button.form-primary {
+	float: right;
+	width: 25%;
+}
+button.form-secondary {
+	width: 25%;
+}
+button.form-submit {
+	float: right;
+	width: 25%;
+}
+.form-group {
+	text-align: center;
+	font-size: 18px;
+}
 /* ---------------------Filter toggle/accordion--------------------------*/
 /* https://github.com/springload/react-accessible-accordion */
 
