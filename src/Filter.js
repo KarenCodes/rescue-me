@@ -12,7 +12,7 @@ const Button = props => {
 const FilterButton = props => {
 	return (
 		<Button
-			className={isFilterSelected(props.props.conditions, props.group.name, props.value.name) ? 'selected' : ''}
+			className={isFilterSelected(props.props.conditions, props.group.name, props.value.name) ? 'selected' : null}
 			onClick={() => toggleFilter(props.props, props.group.name, props.value.name)}
 			text={props.text}
 		/>
@@ -53,18 +53,21 @@ export default class Filter extends React.Component {
 		return (
 			//Buttons
 			<div>
+				<h2 className="good-with-filters">Good with</h2>
 				<ul key="top" className="filters good-with-filters">
 					{SINGLE_FILTERS.map(group => {
 						return (
 							// Display filters in group
 							group.values.map(value => (
-								<FilterButton
-									key={value.name}
-									props={this.props}
-									group={group}
-									value={value}
-									text={group.label}
-								/>
+								<li key={value.name}>
+									<FilterButton
+										key={value.name}
+										props={this.props}
+										group={group}
+										value={value}
+										text={group.label}
+									/>
+								</li>
 							))
 						);
 					})}
@@ -86,13 +89,15 @@ export default class Filter extends React.Component {
 								<ul>
 									{// Display filters in group
 									group.values.map(value => (
-										<FilterButton
-											key={value.name}
-											props={this.props}
-											group={group}
-											value={value}
-											text={value.label}
-										/>
+										<li key={value.name}>
+											<FilterButton
+												key={value.name}
+												props={this.props}
+												group={group}
+												value={value}
+												text={value.label}
+											/>
+										</li>
 									))}
 								</ul>
 							</li>
