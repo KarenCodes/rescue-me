@@ -390,9 +390,13 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 	margin: 0 auto;
 }
 
-.filters h2 {
+.filters h2,
+h2.good-with-filters {
 	font-size: 18px;
 	font-weight: normal;
+}
+
+.filters h2 {
 	margin-bottom: 0px;
 }
 
@@ -410,10 +414,11 @@ ul.filters.good-with-filters {
 	/* justify-items: center; */
 	/* grid-gap: 10px; */
 }
-.filters button {
+.filters ul li,
+.filters.good-with-filters li {
 	flex-grow: 1;
-	flex-shrink: 1;
 	flex-basis: 0;
+	flex-shrink: 1;
 	margin: 10px 10px;
 }
 
@@ -424,6 +429,7 @@ button {
 	font-size: 18px;
 	padding: 10px;
 	border-radius: 5px;
+	width: 100%;
 }
 
 button a {
