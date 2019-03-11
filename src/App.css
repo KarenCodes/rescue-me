@@ -463,10 +463,39 @@ button.form-submit {
 	float: right;
 	width: 25%;
 }
-.form-group {
+fieldset {
+	margin: 5%;
+	border: 2px solid var(--darkblue);
+	background: var(--paleblue);
+}
+legend {
+	text-align: center;
+	background: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.form-group,
+form p {
 	text-align: center;
 	font-size: 18px;
 }
+.form-item {
+	display: inline-block;
+	margin: 5%;
+}
+form span.text {
+	display: block;
+}
+form span.emoji {
+	font-size: 80px;
+}
+input {
+	font-size: 18px;
+}
+input.form-control:focus {
+	outline: 2px solid var(--pink);
+}
+
 /* ---------------------Filter toggle/accordion--------------------------*/
 /* https://github.com/springload/react-accessible-accordion */
 

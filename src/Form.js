@@ -10,12 +10,12 @@ export default class Form extends React.Component {
 		super(props);
 		this.state = {
 			currentStep: 1,
-			email: '',
 			username: '',
-			password: ''
+			house: '',
+			kids: ''
 		};
 	}
-
+	//input name must match name given in state
 	handleChange = event => {
 		const { name, value } = event.target;
 		this.setState({
@@ -25,11 +25,11 @@ export default class Form extends React.Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		const { username, email, password } = this.state;
+		const { username, house, kids } = this.state;
 		alert(`You entered: \n
-      Email: ${email} \n
-           Username: ${username} \n
-           Password: ${password}`);
+          Name: ${username} \n
+          House: ${house} \n
+          Kids: ${kids}`);
 	};
 
 	_next = () => {
@@ -79,7 +79,7 @@ export default class Form extends React.Component {
 		return (
 			<main>
 				<h1>Match me with new best friend</h1>
-				<p>Step {this.state.currentStep} </p>
+				<p>Step {this.state.currentStep} of 3</p>
 
 				<form onSubmit={this.handleSubmit}>
 					{/*
@@ -88,17 +88,18 @@ export default class Form extends React.Component {
 					<FormStep1
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
-						email={this.state.email}
+						username={this.state.username}
 					/>
 					<FormStep2
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
+						house={this.state.house}
 						username={this.state.username}
 					/>
 					<FormStep3
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
-						password={this.state.password}
+						kids={this.state.kids}
 					/>
 
 					{this.previousButton()}
