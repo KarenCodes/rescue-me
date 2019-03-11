@@ -1,4 +1,7 @@
 import React from 'react';
+import FormStep1 from './Components/FormStep1';
+import FormStep2 from './Components/FormStep2';
+import FormStep3 from './Components/FormStep3';
 
 //https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
 
@@ -22,9 +25,9 @@ export default class Form extends React.Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		const { email, username, password } = this.state;
+		const { username, email, password } = this.state;
 		alert(`You entered: \n
-           Email: ${email} \n
+      Email: ${email} \n
            Username: ${username} \n
            Password: ${password}`);
 	};
@@ -82,88 +85,26 @@ export default class Form extends React.Component {
 					{/*
         render the form steps and pass required props in
       */}
-					<Step1
+					<FormStep1
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
 						email={this.state.email}
 					/>
-					<Step2
+					<FormStep2
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
 						username={this.state.username}
 					/>
-					<Step3
+					<FormStep3
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
 						password={this.state.password}
 					/>
+
 					{this.previousButton()}
 					{this.nextButton()}
 				</form>
 			</main>
 		);
 	}
-}
-
-function Step1(props) {
-	if (props.currentStep !== 1) {
-		return null;
-	}
-	return (
-		<div className="form-group">
-			<label htmlFor="email">Email address</label>
-			<input
-				className="form-control"
-				id="email"
-				name="email"
-				type="text"
-				placeholder="Enter email"
-				value={props.email}
-				onChange={props.handleChange}
-			/>
-		</div>
-	);
-}
-
-function Step2(props) {
-	if (props.currentStep !== 2) {
-		return null;
-	}
-	return (
-		<div className="form-group">
-			<label htmlFor="username">Username</label>
-			<input
-				className="form-control"
-				id="username"
-				name="username"
-				type="text"
-				placeholder="Enter username"
-				value={props.username}
-				onChange={props.handleChange}
-			/>
-		</div>
-	);
-}
-
-function Step3(props) {
-	if (props.currentStep !== 3) {
-		return null;
-	}
-	return (
-		<React.Fragment>
-			<div className="form-group">
-				<label htmlFor="password">Password</label>
-				<input
-					className="form-control"
-					id="password"
-					name="password"
-					type="password"
-					placeholder="Enter password"
-					value={props.password}
-					onChange={props.handleChange}
-				/>
-			</div>
-			<button className="form-submit">Find me a dog!</button>
-		</React.Fragment>
-	);
 }
