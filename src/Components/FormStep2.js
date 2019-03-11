@@ -14,8 +14,10 @@ const FormStep2 = props => {
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="house">
-							<span class="emoji">🏠</span>
-							<span class="text">House</span>
+							<span className="emoji" role="img" aria-label="House">
+								🏠
+							</span>
+							<span className="text">House</span>
 						</label>
 						<input
 							className="form-control"
@@ -30,8 +32,10 @@ const FormStep2 = props => {
 
 					<div className="form-item">
 						<label htmlFor="apartment">
-							<span class="emoji">🏢</span>
-							<span class="text">Apartment</span>
+							<span className="emoji" role="img" aria-label="Apartment">
+								🏢
+							</span>
+							<span className="text">Apartment</span>
 						</label>
 						<input
 							className="form-control"

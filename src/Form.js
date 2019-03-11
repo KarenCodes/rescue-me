@@ -2,6 +2,7 @@ import React from 'react';
 import FormStep1 from './Components/FormStep1';
 import FormStep2 from './Components/FormStep2';
 import FormStep3 from './Components/FormStep3';
+import FormDisplayDogs from './Components/FormDisplayDogs';
 
 //https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
 
@@ -10,11 +11,13 @@ export default class Form extends React.Component {
 		super(props);
 		this.state = {
 			currentStep: 1,
+			submitted: '',
 			username: '',
 			house: '',
 			kids: ''
 		};
 	}
+
 	//input name must match name given in state
 	handleChange = event => {
 		const { name, value } = event.target;
@@ -25,11 +28,14 @@ export default class Form extends React.Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		const { username, house, kids } = this.state;
-		alert(`You entered: \n
-          Name: ${username} \n
-          House: ${house} \n
-          Kids: ${kids}`);
+		// used by render to decide if can display dogs
+		this.setState({ submitted: true });
+		// const { username, house, kids } = this.state;
+		// alert(`You entered: \n
+		//       Name: ${username} \n
+		//       House: ${house} \n
+		//       Kids: ${kids}`
+		//       );
 	};
 
 	_next = () => {
@@ -80,7 +86,6 @@ export default class Form extends React.Component {
 			<main>
 				<h1>Match me with new best friend</h1>
 				<p>Step {this.state.currentStep} of 3</p>
-
 				<form onSubmit={this.handleSubmit}>
 					{/*
         render the form steps and pass required props in
@@ -105,6 +110,10 @@ export default class Form extends React.Component {
 					{this.previousButton()}
 					{this.nextButton()}
 				</form>
+				{/* when form is submitted, display list of dogs */}
+				{this.state.submitted && (
+					<FormDisplayDogs username={this.state.username} house={this.state.house} kids={this.state.kids} />
+				)}
 			</main>
 		);
 	}

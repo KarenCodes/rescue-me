@@ -12,8 +12,10 @@ const FormStep3 = props => {
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="kids">
-							<span class="emoji">👍</span>
-							<span class="text">Kids</span>
+							<span className="emoji" role="img" aria-label="Thumbs up">
+								👍
+							</span>
+							<span className="text">Kids</span>
 						</label>
 						<input
 							className="form-control"
@@ -28,8 +30,10 @@ const FormStep3 = props => {
 
 					<div className="form-item">
 						<label htmlFor="no-kids">
-							<span class="emoji">👎</span>
-							<span class="text">No Kids</span>
+							<span className="emoji" role="img" aria-label="Thumbs down">
+								👎
+							</span>
+							<span className="text">No Kids</span>
 						</label>
 						<input
 							className="form-control"
