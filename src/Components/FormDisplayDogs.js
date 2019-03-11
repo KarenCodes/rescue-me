@@ -13,10 +13,12 @@ export default class FormDisplayDogs extends React.Component {
 
 	buildConditions = props => {
 		// build conditions based on form input
+		// props.house can have a value of "house" or "apartment" or null
+		// props.kids can have a value of "kids" or "no kids" or null
 		console.log(props);
 		if (props.kids === 'kids') {
 			// set good with kids condition
-			const group = 'rescue_me_meta_good_wih_kids';
+			const group = 'rescue_me_meta_good_with_kids';
 			// toggleFilter('', group, 'true');
 		}
 		if (props.house === 'apartment') {
