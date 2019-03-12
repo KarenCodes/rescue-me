@@ -12,8 +12,10 @@ const Button = props => {
 const FilterButton = props => {
 	return (
 		<Button
-			className={isFilterSelected(props.props.conditions, props.group.name, props.value.name) ? 'selected' : null}
-			onClick={() => toggleFilter(props.props, props.group.name, props.value.name)}
+			className={isFilterSelected(props.props.conditions, props.group.name, props.value.name) ? 'selected' : ''}
+			onClick={() =>
+				toggleFilter(props.props.conditions, props.props.setConditions, props.group.name, props.value.name)
+			}
 			text={props.text}
 		/>
 	);
@@ -27,9 +29,9 @@ const isFilterSelected = (conditions, group, value) => {
 	return false;
 };
 // Adds or removes a filter value to the list
-const toggleFilter = (props, group, value) => {
-	if (!props.conditions) return;
-	const newConditions = Object.assign(props.conditions);
+const toggleFilter = (conditions, setConditions, group, value) => {
+	if (!conditions) return;
+	const newConditions = Object.assign(conditions);
 	// If filter group is not in conditions, add new group with value
 	if (!(group in newConditions)) newConditions[group] = new Array(value);
 	else {
@@ -44,7 +46,7 @@ const toggleFilter = (props, group, value) => {
 			newConditions[group].push(value);
 		}
 	}
-	props.setConditions(newConditions);
+	setConditions(newConditions);
 	return true;
 };
 export default class Filter extends React.Component {
@@ -53,21 +55,18 @@ export default class Filter extends React.Component {
 		return (
 			//Buttons
 			<div>
-				<h2 className="good-with-filters">Good with</h2>
 				<ul key="top" className="filters good-with-filters">
 					{SINGLE_FILTERS.map(group => {
 						return (
 							// Display filters in group
 							group.values.map(value => (
-								<li key={value.name}>
-									<FilterButton
-										key={value.name}
-										props={this.props}
-										group={group}
-										value={value}
-										text={group.label}
-									/>
-								</li>
+								<FilterButton
+									key={value.name}
+									props={this.props}
+									group={group}
+									value={value}
+									text={group.label}
+								/>
 							))
 						);
 					})}
@@ -89,15 +88,13 @@ export default class Filter extends React.Component {
 								<ul>
 									{// Display filters in group
 									group.values.map(value => (
-										<li key={value.name}>
-											<FilterButton
-												key={value.name}
-												props={this.props}
-												group={group}
-												value={value}
-												text={value.label}
-											/>
-										</li>
+										<FilterButton
+											key={value.name}
+											props={this.props}
+											group={group}
+											value={value}
+											text={value.label}
+										/>
 									))}
 								</ul>
 							</li>
