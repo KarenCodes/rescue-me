@@ -9,6 +9,11 @@ import FormDisplayDogs from './Components/FormDisplayDogs';
 export default class Form extends React.Component {
 	constructor(props) {
 		super(props);
+		console.log('form', props);
+		console.log(props.dogs);
+		const { dogs, conditions, setConditions } = this.props;
+		console.log('Dogs', dogs);
+
 		this.state = {
 			currentStep: 1,
 			submitted: '',
@@ -86,6 +91,7 @@ export default class Form extends React.Component {
 			<main>
 				<h1>Match me with new best friend</h1>
 				<p>Step {this.state.currentStep} of 3</p>
+				<p>{this.props.dogs[0].id}</p>
 				<form onSubmit={this.handleSubmit}>
 					{/*
         render the form steps and pass required props in
@@ -111,8 +117,16 @@ export default class Form extends React.Component {
 					{this.nextButton()}
 				</form>
 				{/* when form is submitted, display list of dogs */}
+
 				{this.state.submitted && (
-					<FormDisplayDogs username={this.state.username} house={this.state.house} kids={this.state.kids} />
+					<FormDisplayDogs
+						username={this.state.username}
+						house={this.state.house}
+						kids={this.state.kids}
+						dogs={this.state.dogs}
+						conditions={this.state.conditions}
+						setConditions={this.setConditions}
+					/>
 				)}
 			</main>
 		);
