@@ -7,10 +7,12 @@ export default class FormDisplayDogs extends React.Component {
 	constructor(props) {
 		super(props);
 		const { username, house, kids, dogs, conditions, setConditions } = props;
+		console.log('props', props);
 		this.state = {
 			// dogs: [],
 			conditions: {}
 		};
+		this.buildConditions(this.props);
 	}
 
 	buildConditions = props => {
@@ -20,28 +22,33 @@ export default class FormDisplayDogs extends React.Component {
 		console.log(props);
 		if (props.kids === 'kids') {
 			// set good with kids condition
-			const group = 'rescue_me_meta_good_with_kids';
+			let group = 'rescue_me_meta_good_with_kids';
+			// this.setState({ conditions: group['true'] });
+			this.state.conditions[group] = 'true';
 			// toggleFilter('', group, 'true');
 		}
+		if (props.cats === 'cats') {
+			// set good with kids condition
+			let group = 'rescue_me_meta_good_with_cats';
+			// this.setState({ conditions: group['true'] });
+			this.state.conditions[group] = 'true';
+		}
+		let group = 'rescue_me_meta_size';
 		if (props.house === 'apartment') {
 			//set small condition
-		} else {
-			//set all sizes
+			// this.setState({ conditions: group['Small'] });
+			this.state.conditions[group] = 'Small';
 		}
+		console.log('form conditions', this.state.conditions);
 	};
 
 	render() {
-		this.buildConditions(this.props);
 		// return <FilteredDogsList conditions={this.state.conditions} />;
 		return (
 			<div>
-				<p>
-					list of filtered dogs, how to do this, created Components/FormDisplayDogs to set up conditions, but
-					I am lost: state, toggleFilter...
-				</p>
-				<p>also need to remove form from page?</p>
+				<p>also need to remove form from page? reset?</p>
 
-				{/* <Dogs dogs={this.state.dogs} conditions={this.state.conditions} setConditions={this.setConditions} /> */}
+				<Dogs dogs={this.props.dogs} conditions={this.state.conditions} setConditions={this.setConditions} />
 			</div>
 		);
 	}

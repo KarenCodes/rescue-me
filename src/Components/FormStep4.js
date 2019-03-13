@@ -1,54 +1,56 @@
 import React from 'react';
 
-const FormStep3 = props => {
-	if (props.currentStep !== 3) {
+const FormStep4 = props => {
+	if (props.currentStep !== 4) {
 		return null;
 	}
 	return (
 		<React.Fragment>
 			<fieldset>
-				<legend>Will your dog be with kids?</legend>
+				<legend>Will your dog be with cats?</legend>
 
 				<div className="form-group">
 					<div className="form-item">
-						<label htmlFor="kids">
+						<label htmlFor="cats">
 							<span className="emoji" role="img" aria-label="Thumbs up">
 								👍
 							</span>
-							<span className="text">Kids</span>
+							<span className="text">Cats</span>
 						</label>
 						<input
 							className="form-control"
-							id="kids"
-							name="kids"
+							id="cats"
+							name="cats"
 							type="radio"
-							checked={props.kids === 'kids' ? true : false}
-							value="kids"
+							checked={props.cats === 'cats' ? true : false}
+							value="cats"
 							onChange={props.handleChange}
 						/>
 					</div>
 
 					<div className="form-item">
-						<label htmlFor="no-kids">
+						<label htmlFor="no-cats">
 							<span className="emoji" role="img" aria-label="Thumbs down">
 								👎
 							</span>
-							<span className="text">No Kids</span>
+							<span className="text">No cats</span>
 						</label>
 						<input
 							className="form-control"
-							id="no-kids"
-							name="kids"
+							id="no-cats"
+							name="cats"
 							type="radio"
-							checked={props.kids === 'no kids' ? true : false}
-							value="no kids"
+							checked={props.cats === 'no cats' ? true : false}
+							value="no cats"
 							onChange={props.handleChange}
 						/>
 					</div>
 				</div>
 			</fieldset>
+
+			<button className="form-submit">Find my match!</button>
 		</React.Fragment>
 	);
 };
 
-export default FormStep3;
+export default FormStep4;

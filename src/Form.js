@@ -2,6 +2,9 @@ import React from 'react';
 import FormStep1 from './Components/FormStep1';
 import FormStep2 from './Components/FormStep2';
 import FormStep3 from './Components/FormStep3';
+import FormStep4 from './Components/FormStep4';
+// import FormStep5 from './Components/FormStep5';
+// import FormStep6 from './Components/FormStep6';
 import FormDisplayDogs from './Components/FormDisplayDogs';
 
 //https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
@@ -9,17 +12,17 @@ import FormDisplayDogs from './Components/FormDisplayDogs';
 export default class Form extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log('form', props);
-		console.log(props.dogs);
+
 		const { dogs, conditions, setConditions } = this.props;
-		console.log('Dogs', dogs);
 
 		this.state = {
 			currentStep: 1,
+			lastStep: 4,
 			submitted: '',
 			username: '',
 			house: '',
-			kids: ''
+			kids: '',
+			cats: ''
 		};
 	}
 
@@ -45,7 +48,7 @@ export default class Form extends React.Component {
 
 	_next = () => {
 		let currentStep = this.state.currentStep;
-		currentStep = currentStep >= 2 ? 3 : currentStep + 1;
+		currentStep = currentStep >= this.state.lastStep - 1 ? this.state.lastStep : currentStep + 1;
 		this.setState({
 			currentStep: currentStep
 		});
@@ -76,7 +79,7 @@ export default class Form extends React.Component {
 
 	nextButton() {
 		let currentStep = this.state.currentStep;
-		if (currentStep < 3) {
+		if (currentStep < this.state.lastStep) {
 			return (
 				<button className="form-primary" type="button" onClick={this._next}>
 					Next
@@ -90,8 +93,10 @@ export default class Form extends React.Component {
 		return (
 			<main>
 				<h1>Match me with new best friend</h1>
-				<p>Step {this.state.currentStep} of 3</p>
-				<p>{this.props.dogs[0].id}</p>
+				<p>
+					Step {this.state.currentStep} of {this.state.lastStep}
+				</p>
+
 				<form onSubmit={this.handleSubmit}>
 					{/*
         render the form steps and pass required props in
@@ -112,6 +117,11 @@ export default class Form extends React.Component {
 						handleChange={this.handleChange}
 						kids={this.state.kids}
 					/>
+					<FormStep4
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+						cats={this.state.cats}
+					/>
 
 					{this.previousButton()}
 					{this.nextButton()}
@@ -123,7 +133,8 @@ export default class Form extends React.Component {
 						username={this.state.username}
 						house={this.state.house}
 						kids={this.state.kids}
-						dogs={this.state.dogs}
+						cats={this.state.cats}
+						dogs={this.props.dogs}
 						conditions={this.state.conditions}
 						setConditions={this.setConditions}
 					/>
