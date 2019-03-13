@@ -46,8 +46,6 @@ export default class FormDisplayDogs extends React.Component {
 		// return <FilteredDogsList conditions={this.state.conditions} />;
 		return (
 			<div>
-				<p>also need to remove form from page? reset?</p>
-
 				<Dogs dogs={this.props.dogs} conditions={this.state.conditions} setConditions={this.setConditions} />
 			</div>
 		);

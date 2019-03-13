@@ -12,8 +12,8 @@ const FormStep4 = props => {
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="cats">
-							<span className="emoji" role="img" aria-label="Thumbs up">
-								👍
+							<span className="emoji" role="img" aria-label="Yes cats">
+								😺
 							</span>
 							<span className="text">Cats</span>
 						</label>
@@ -30,8 +30,8 @@ const FormStep4 = props => {
 
 					<div className="form-item">
 						<label htmlFor="no-cats">
-							<span className="emoji" role="img" aria-label="Thumbs down">
-								👎
+							<span className="emoji" role="img" aria-label="No Cats">
+								😾
 							</span>
 							<span className="text">No cats</span>
 						</label>
@@ -47,8 +47,6 @@ const FormStep4 = props => {
 					</div>
 				</div>
 			</fieldset>
-
-			<button className="form-submit">Find my match!</button>
 		</React.Fragment>
 	);
 };

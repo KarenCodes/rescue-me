@@ -3,8 +3,9 @@ import FormStep1 from './Components/FormStep1';
 import FormStep2 from './Components/FormStep2';
 import FormStep3 from './Components/FormStep3';
 import FormStep4 from './Components/FormStep4';
-// import FormStep5 from './Components/FormStep5';
+import FormStep5 from './Components/FormStep5';
 // import FormStep6 from './Components/FormStep6';
+//when adding FormSteps remember to update lastStep
 import FormDisplayDogs from './Components/FormDisplayDogs';
 
 //https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
@@ -17,7 +18,7 @@ export default class Form extends React.Component {
 
 		this.state = {
 			currentStep: 1,
-			lastStep: 4,
+			lastStep: 5,
 			submitted: '',
 			username: '',
 			house: '',
@@ -67,7 +68,7 @@ export default class Form extends React.Component {
 	 */
 	previousButton() {
 		let currentStep = this.state.currentStep;
-		if (currentStep !== 1) {
+		if (currentStep !== 1 && !this.state.submitted) {
 			return (
 				<button className="form-secondary" type="button" onClick={this._prev}>
 					Previous
@@ -122,6 +123,7 @@ export default class Form extends React.Component {
 						handleChange={this.handleChange}
 						cats={this.state.cats}
 					/>
+					<FormStep5 currentStep={this.state.currentStep} handleChange={this.handleChange} />
 
 					{this.previousButton()}
 					{this.nextButton()}
