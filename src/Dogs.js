@@ -5,7 +5,7 @@ import Filter from './Filter.js';
 import FilteredDogList from './FilteredDogsList.js';
 
 const Dogs = props => {
-	const { dogs, conditions, setConditions } = props;
+	const { dogs, conditions, setConditions, username } = props;
 	return (
 		<Switch>
 			<Route
@@ -15,6 +15,24 @@ const Dogs = props => {
 					<article className="dogs container">
 						<h1>Dogs</h1>
 						<Filter dogs={dogs} conditions={conditions} setConditions={setConditions} />
+						<ul className="dog-list">
+							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
+							{
+								<React.Fragment>
+									<FilteredDogList dogs={dogs} conditions={conditions} />
+								</React.Fragment>
+							}
+						</ul>
+					</article>
+				)}
+			/>
+			<Route
+				exact
+				path="/form"
+				render={() => (
+					<article className="dogs container">
+						<h1>Matches for {username}</h1>
+						{/* <Filter dogs={dogs} conditions={conditions} setConditions={setConditions} /> */}
 						<ul className="dog-list">
 							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
 							{
