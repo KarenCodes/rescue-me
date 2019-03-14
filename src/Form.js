@@ -143,8 +143,6 @@ export default class Form extends React.Component {
 						kids={this.state.kids}
 						cats={this.state.cats}
 						dogs={this.props.dogs}
-						conditions={this.state.conditions}
-						setConditions={this.setConditions}
 					/>
 				)}
 			</main>
