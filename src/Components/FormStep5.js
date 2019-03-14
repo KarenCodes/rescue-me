@@ -8,7 +8,7 @@ const FormStep5 = props => {
 		<React.Fragment>
 			<fieldset>
 				<legend>Here's what you selected</legend>
-				<p>list out what they chose and tell them to go back and make changes</p>
+				<p>list out what they chose </p>
 				<button className="form-submit">Find my match!</button>
 			</fieldset>
 		</React.Fragment>
