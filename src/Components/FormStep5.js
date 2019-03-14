@@ -9,7 +9,7 @@ const FormStep5 = props => {
 	return (
 		<React.Fragment>
 			<fieldset>
-				<legend>Here's what you selected</legend>
+				<legend>The final step</legend>
 				<p>Ok {username}!</p>
 				<p>Here's what you chose:</p>
 				<ul>
