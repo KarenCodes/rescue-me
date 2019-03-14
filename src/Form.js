@@ -121,7 +121,14 @@ export default class Form extends React.Component {
 						handleChange={this.handleChange}
 						cats={this.state.cats}
 					/>
-					<FormStep5 currentStep={this.state.currentStep} handleChange={this.handleChange} />
+					<FormStep5
+						username={this.state.username}
+						house={this.state.house}
+						kids={this.state.kids}
+						cats={this.state.cats}
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+					/>
 
 					{this.previousButton()}
 					{this.nextButton()}

@@ -24,7 +24,7 @@ export default class FormDisplayDogs extends React.Component {
 			this.setState({ conditions: group['true'] });
 			// this.state.conditions[group] = 'true';
 			// toggle needs (conditions, setConditions, group, value)
-			// toggleFilter('', group, 'true');
+			// toggleFilter(this.state.conditions, this.setConditions, group, 'true');
 		}
 		if (props.cats === 'cats') {
 			// set good with kids condition
@@ -38,7 +38,6 @@ export default class FormDisplayDogs extends React.Component {
 			this.setState({ conditions: group['Small'] });
 			// this.state.conditions[group] = 'Small';
 		}
-		console.log('form conditions', this.state.conditions);
 	};
 
 	render() {
