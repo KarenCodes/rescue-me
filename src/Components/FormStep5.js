@@ -19,7 +19,6 @@ const FormStep5 = props => {
 				</ul>
 				{submitted ? null : <button className="form-submit">Find my match!</button>}
 			</fieldset>
-			<button className="form-submit">Find my match!</button>
 		</React.Fragment>
 	);
 };
