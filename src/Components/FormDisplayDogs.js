@@ -9,7 +9,6 @@ export default class FormDisplayDogs extends React.Component {
 		const { username, house, kids, dogs, conditions, setConditions } = props;
 		console.log('props', props);
 		this.state = {
-			// dogs: [],
 			conditions: {}
 		};
 		this.buildConditions(this.props);
@@ -25,6 +24,7 @@ export default class FormDisplayDogs extends React.Component {
 			let group = 'rescue_me_meta_good_with_kids';
 			// this.setState({ conditions: group['true'] });
 			this.state.conditions[group] = 'true';
+			// toggle needs (conditions, setConditions, group, value)
 			// toggleFilter('', group, 'true');
 		}
 		if (props.cats === 'cats') {
