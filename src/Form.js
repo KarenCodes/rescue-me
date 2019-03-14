@@ -128,6 +128,7 @@ export default class Form extends React.Component {
 						cats={this.state.cats}
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
+						submitted={this.state.submitted}
 					/>
 
 					{this.previousButton()}

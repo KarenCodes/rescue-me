@@ -4,18 +4,20 @@ const FormStep5 = props => {
 	if (props.currentStep !== 5) {
 		return null;
 	}
+	const { username, house, kids, cats, submitted } = props;
 
 	return (
 		<React.Fragment>
 			<fieldset>
 				<legend>Here's what you selected</legend>
-				<p>Ok, {props.username}!</p>
+				<p>Ok {username}!</p>
 				<p>Here's what you chose:</p>
 				<ul>
-					<li>{props.house}</li>
-					<li>{props.kids}</li>
-					<li>{props.cats}</li>
+					<li>{house}</li>
+					<li>{kids}</li>
+					<li>{cats}</li>
 				</ul>
+				{submitted ? null : <button className="form-submit">Find my match!</button>}
 			</fieldset>
 			<button className="form-submit">Find my match!</button>
 		</React.Fragment>

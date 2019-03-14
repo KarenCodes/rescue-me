@@ -31,7 +31,7 @@ const Dogs = props => {
 				path="/form"
 				render={() => (
 					<article className="dogs container">
-						<h1>Matches for {username}</h1>
+						<h2>Matches for {username ? username : 'you'}</h2>
 						{/* <Filter dogs={dogs} conditions={conditions} setConditions={setConditions} /> */}
 						<ul className="dog-list">
 							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
