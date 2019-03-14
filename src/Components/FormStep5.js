@@ -16,8 +16,8 @@ const FormStep5 = props => {
 					<li>{props.kids}</li>
 					<li>{props.cats}</li>
 				</ul>
-				<button className="form-submit">Find my match!</button>
 			</fieldset>
+			<button className="form-submit">Find my match!</button>
 		</React.Fragment>
 	);
 };
