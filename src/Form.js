@@ -14,8 +14,6 @@ export default class Form extends React.Component {
 	constructor(props) {
 		super(props);
 
-		const { dogs, conditions, setConditions } = this.props;
-
 		this.state = {
 			currentStep: 1,
 			lastStep: 5,

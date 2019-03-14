@@ -5,8 +5,7 @@ import Filter from './Filter.js';
 import FilteredDogList from './FilteredDogsList.js';
 
 const Dogs = props => {
-	const { dogs, conditions, setConditions } = props;
-	console.log('in Dogs', dogs);
+	const { dogs, conditions, setConditions, username } = props;
 	return (
 		<Switch>
 			<Route
@@ -32,7 +31,7 @@ const Dogs = props => {
 				path="/form"
 				render={() => (
 					<article className="dogs container">
-						<h1>Dogs</h1>
+						<h1>Matches for {username}</h1>
 						{/* <Filter dogs={dogs} conditions={conditions} setConditions={setConditions} /> */}
 						<ul className="dog-list">
 							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
