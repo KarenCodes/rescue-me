@@ -475,7 +475,8 @@ legend {
 	font-weight: bold;
 }
 .form-group,
-form p {
+form p,
+form ul {
 	text-align: center;
 	font-size: 18px;
 }
