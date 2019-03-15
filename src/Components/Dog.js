@@ -16,10 +16,10 @@ const Dog = ({ dog }) => {
 				<Features dog={dog} />
 				<GoodWith dog={dog} />
 
-				<Link to="/" className="button-link">
+				{/* <Link to="/" className="button-link">
 					{' '}
 					<button className="more-dogs">See More Dogs</button>
-				</Link>
+				</Link> */}
 			</article>
 		</div>
 	);

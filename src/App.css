@@ -63,11 +63,11 @@ a:focus {
 	color: var(--black);
 }
 
-.dog-card:hover,
+/* .dog-card:hover,
 .dog-card:focus {
 	border: 3px solid var(--pink);
 	border-radius: 10px;
-}
+} */
 
 ul li {
 	list-style-type: none;
@@ -209,12 +209,12 @@ li.dog-card {
 	color: var(--black);
 }
 
-.dog-card:hover,
+/* .dog-card:hover,
 .dog-card:focus {
 	border: 3px solid var(--pink);
 	border-radius: 10px;
 	outline: 2px solid var(--pink);
-}
+} */
 
 /*----------------single dog card for list of dogs-----------------------*/
 .dog-list .doglist.container .card-link {
