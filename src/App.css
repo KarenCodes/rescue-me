@@ -10,7 +10,7 @@
 	/* attention, button selected*/
 	--pink: #d52c82;
 	--brightpink: #ff3997;
-	--darkpink: #992053;
+
 	--shadow: rgba(0, 0, 0, 0.3);
 }
 
@@ -59,9 +59,9 @@ a:hover {
 a:focus {
 	outline: 2px solid var(--pink);
 }
-.dog-card a {
+/* .dog-card a {
 	color: var(--black);
-}
+} */
 
 /* .dog-card:hover,
 .dog-card:focus {
@@ -83,8 +83,17 @@ ul {
 .fa-dog:before {
 	padding-right: 5px;
 	font-size: 30px;
+	color: white;
+}
+
+.dog-single .fa-child:before,
+.dog-single .fa-cat:before,
+.dog-single .fa-dog:before {
+	padding-right: 5px;
+	font-size: 30px;
 	color: var(--darkblue);
 }
+
 /* -----------------------header-----------------------------------*/
 header {
 	background-color: var(--paleblue);
@@ -166,7 +175,7 @@ header {
 	color: var(--pink);
 }
 
-/* ----------------------single dog page------------------------------ */
+/* ----------------------single dog in modal--------------------------- */
 .dog.container {
 	padding: 40px 3%;
 	max-width: 800px;
@@ -189,6 +198,16 @@ header {
 	grid-gap: 10px;
 }
 
+/* button to close modal */
+button.modal-close {
+	position: relative;
+}
+
+button.modal-close span {
+	position: absolute;
+	right: 10px;
+}
+
 /* ----------------------------list of dogs------------------------------*/
 .dog-list {
 	padding: 3%;
@@ -199,21 +218,14 @@ header {
 	grid-gap: 20px;
 }
 
-li.dog-card {
+/* li.dog-card {
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
 	border-radius: 10px;
-}
+} */
 
-.dog-card a {
+/* .dog-card a {
 	color: var(--black);
-}
-
-/* .dog-card:hover,
-.dog-card:focus {
-	border: 3px solid var(--pink);
-	border-radius: 10px;
-	outline: 2px solid var(--pink);
 } */
 
 /*----------------single dog card for list of dogs-----------------------*/
@@ -230,7 +242,7 @@ li.dog-card {
 		'goodwith';
 }
 
-/*---------------dog components ------------------------------------------*/
+/*---------------dog components -----------------------------------------*/
 .dog-image {
 	/* grid */
 	grid-area: image;
@@ -269,7 +281,7 @@ ul.features li {
 ul.features li:before {
 	content: '♥';
 	padding-right: 3px;
-	color: var(--darkblue);
+	color: var(--pink);
 }
 
 ul.features li:first-child:before {

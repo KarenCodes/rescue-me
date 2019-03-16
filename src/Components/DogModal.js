@@ -1,16 +1,28 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Dog from './Components/Dog';
+import Dog from './Dog';
+import Name from './Name';
+import Image from './Image';
+import Features from './Features';
+import GoodWith from './GoodWith';
 
-const customStyles = {
+const customInlineStyles = {
 	content: {
-		// top: '50%',
-		// left: '50%',
-		// right: 'auto',
-		// bottom: 'auto'
-		// marginRight: '-50%',
-		// transform: 'translate(-50%, -50%)'
+		top: '40px',
+		left: '5%',
+		right: '5%',
+		bottom: '40px',
+
+		background: 'rgb(255, 255, 255)',
+		overflow: 'auto',
+		borderRadius: '4px',
+		outline: 'none',
+		padding: '20px',
+		// transform: 'translate(-50%, -50%)',
 		margin: '5px'
+	},
+	overlay: {
+		backgroundColor: '#3172a5'
 	}
 };
 
@@ -44,20 +56,32 @@ export default class DogModal extends React.Component {
 	}
 
 	render() {
+		const dog = this.props.dog;
 		return (
 			<div>
-				<button onClick={this.openModal}>More</button>
+				<button onClick={this.openModal}>
+					<article key={dog.id} className="doglist container">
+						<Image dog={dog} size={'medium'} />
+						<Name dog={dog} />
+						<Features dog={dog} />
+						<GoodWith dog={dog} />
+					</article>
+				</button>
 				<Modal
 					isOpen={this.state.modalIsOpen}
 					onAfterOpen={this.afterOpenModal}
 					onRequestClose={this.closeModal}
-					style={customStyles}
-					contentLabel="Example Modal"
+					style={customInlineStyles}
+					contentLabel="Dog Information Modal"
 				>
-					<button onClick={this.closeModal}>close</button>
+					<button className="modal-close" onClick={this.closeModal}>
+						close<span>X</span>
+					</button>
 					{/* <h2 ref={subtitle => (this.subtitle = subtitle)}>Hello</h2> */}
 					<Dog dog={this.props.dog} />
-					<button onClick={this.closeModal}>close</button>
+					<button className="modal-close" onClick={this.closeModal}>
+						close<span>X</span>
+					</button>
 				</Modal>
 			</div>
 		);
