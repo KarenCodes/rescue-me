@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Name from './Name';
 import Image from './Image';
 import Content from './Content';
@@ -15,11 +14,6 @@ const Dog = ({ dog }) => {
 				<Content dog={dog} />
 				<Features dog={dog} />
 				<GoodWith dog={dog} />
-
-				<Link to="/" className="button-link">
-					{' '}
-					<button className="more-dogs">See More Dogs</button>
-				</Link>
 			</article>
 		</div>
 	);
