@@ -12,7 +12,7 @@ const Dogs = props => {
 				exact
 				path="/"
 				render={() => (
-					<article className="dogs container">
+					<section className="dogs container">
 						<h1>Dogs</h1>
 						<Filter dogs={dogs} conditions={conditions} setConditions={setConditions} />
 						<ul className="dog-list">
@@ -23,25 +23,25 @@ const Dogs = props => {
 								</React.Fragment>
 							}
 						</ul>
-					</article>
+					</section>
 				)}
 			/>
 			<Route
 				exact
 				path="/form"
 				render={() => (
-					<article className="dogs container">
+					<section className="dogs container">
 						<h2>Matches for {username ? username : 'you'}</h2>
 						{/* <Filter dogs={dogs} conditions={conditions} setConditions={setConditions} /> */}
 						<ul className="dog-list">
-							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
+							{dogs.length < 1 && <li key="empty">No dogs match!</li>}
 							{
 								<React.Fragment>
 									<FilteredDogList dogs={dogs} conditions={conditions} />
 								</React.Fragment>
 							}
 						</ul>
-					</article>
+					</section>
 				)}
 			/>
 			<Route
