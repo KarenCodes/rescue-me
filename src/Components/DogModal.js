@@ -5,6 +5,7 @@ import Name from './Name';
 import Image from './Image';
 import Features from './Features';
 import GoodWith from './GoodWith';
+import { NONAME } from 'dns';
 
 const customInlineStyles = {
 	content: {
@@ -12,7 +13,7 @@ const customInlineStyles = {
 		left: '5%',
 		right: '5%',
 		bottom: '40px',
-
+		border: '0px',
 		background: 'rgb(255, 255, 255)',
 		overflow: 'auto',
 		borderRadius: '4px',
@@ -58,7 +59,7 @@ export default class DogModal extends React.Component {
 	render() {
 		const dog = this.props.dog;
 		return (
-			<div>
+			<div className="modal-open">
 				<button onClick={this.openModal}>
 					<article key={dog.id} className="doglist container">
 						<Image dog={dog} size={'medium'} />

@@ -66,13 +66,7 @@ class Main extends Component {
 				<Route
 					path="/form"
 					render={() => {
-						return (
-							<Form
-								dogs={this.state.dogs}
-								conditions={this.state.conditions}
-								setConditions={this.setConditions}
-							/>
-						);
+						return <Form dogs={this.state.dogs} />;
 					}}
 				/>
 				<Route path="/about" component={About} />

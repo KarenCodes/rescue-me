@@ -24,7 +24,6 @@ html {
 }
 
 .body {
-	/* text-align: center; */
 	background: var(--palegray);
 	color: var(--black);
 	font-family: Lato, sans-serif;
@@ -59,15 +58,6 @@ a:hover {
 a:focus {
 	outline: 2px solid var(--pink);
 }
-/* .dog-card a {
-	color: var(--black);
-} */
-
-/* .dog-card:hover,
-.dog-card:focus {
-	border: 3px solid var(--pink);
-	border-radius: 10px;
-} */
 
 ul li {
 	list-style-type: none;
@@ -175,10 +165,10 @@ header {
 	color: var(--pink);
 }
 
-/* ----------------------single dog in modal--------------------------- */
+/* ----------------------single dog open in modal--------------------------- */
 .dog.container {
 	padding: 40px 3%;
-	max-width: 800px;
+	max-width: 1200px;
 	box-shadow: 0 1px 1px 0 var(--shadow);
 	background: var(--paleblue);
 	border-radius: 10px;
@@ -208,7 +198,7 @@ button.modal-close span {
 	right: 10px;
 }
 
-/* ----------------------------list of dogs------------------------------*/
+/* ----------------------------list of dogs-----------------------------*/
 .dog-list {
 	padding: 3%;
 	/* grid */
@@ -218,18 +208,8 @@ button.modal-close span {
 	grid-gap: 20px;
 }
 
-/* li.dog-card {
-	box-shadow: 0 1px 1px 0 var(--shadow);
-	background: var(--paleblue);
-	border-radius: 10px;
-} */
-
-/* .dog-card a {
-	color: var(--black);
-} */
-
-/*----------------single dog card for list of dogs-----------------------*/
-.dog-list .doglist.container .card-link {
+/*----------------single dog card in list of dogs----------------------*/
+#xx .dog-list .doglist.container {
 	text-decoration: none;
 	/* grid */
 	display: grid;
@@ -311,7 +291,7 @@ ul.features li:first-child:before {
 	border: 1px solid var(--shadow);
 	border-radius: 5px;
 	color: white;
-	padding: 3%;
+	padding: 1%;
 	text-align: center;
 	font-weight: bold;
 	text-shadow: 0.5px 0.5px var(--shadow);
@@ -425,10 +405,6 @@ ul.filters.good-with-filters {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	flex-flow: row wrap;
-
-	/* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
-	/* justify-items: center; */
-	/* grid-gap: 10px; */
 }
 .filters ul li,
 .filters.good-with-filters li {
@@ -624,7 +600,6 @@ input.form-control:focus {
 	0% {
 		opacity: 0;
 	}
-
 	100% {
 		opacity: 1;
 	}
@@ -694,7 +669,7 @@ input.form-control:focus {
 		margin: 0 20px;
 	}
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 780px) {
 	.dog.container {
 		grid-template-columns: 1fr;
 		grid-template-areas:
