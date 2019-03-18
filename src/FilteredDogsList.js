@@ -1,5 +1,5 @@
 import React from 'react';
-import DogCard from './Components/DogCard';
+import DogCard from './Components/Dog/DogCard';
 
 const withTransformProps = mapperFunc => BaseComponent => baseProps => {
 	const transformedProps = mapperFunc(baseProps);

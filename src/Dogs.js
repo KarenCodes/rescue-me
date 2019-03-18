@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Dog from './Components/Dog';
+import Dog from './Components/Dog/Dog';
 import Filter from './Filter.js';
 import FilteredDogList from './FilteredDogsList.js';
 
 const Dogs = props => {
 	const { dogs, conditions, setConditions, username } = props;
+	console.log(conditions);
 	return (
 		<Switch>
 			<Route

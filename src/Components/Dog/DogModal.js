@@ -5,7 +5,6 @@ import Name from './Name';
 import Image from './Image';
 import Features from './Features';
 import GoodWith from './GoodWith';
-import { NONAME } from 'dns';
 
 const customInlineStyles = {
 	content: {

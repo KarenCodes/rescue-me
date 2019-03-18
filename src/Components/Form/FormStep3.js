@@ -12,8 +12,8 @@ const FormStep3 = props => {
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="kids">
-							<span className="emoji" role="img" aria-label="Thumbs up">
-								👍
+							<span className="emoji" role="img" aria-label="Yes kids">
+								👶
 							</span>
 							<span className="text">Kids</span>
 						</label>
@@ -30,7 +30,7 @@ const FormStep3 = props => {
 
 					<div className="form-item">
 						<label htmlFor="no-kids">
-							<span className="emoji" role="img" aria-label="Thumbs down">
+							<span className="emoji" role="img" aria-label="No kids">
 								👎
 							</span>
 							<span className="text">No Kids</span>
