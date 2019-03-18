@@ -66,7 +66,7 @@ export default class Form extends React.Component {
 		if (currentStep !== 1 && !this.state.submitted) {
 			return (
 				<button className="form-secondary" type="button" onClick={this._prev}>
-					Previous
+					Back
 				</button>
 			);
 		}
@@ -140,8 +140,10 @@ export default class Form extends React.Component {
 						submitted={this.state.submitted}
 					/>
 
-					{this.previousButton()}
-					{this.nextButton()}
+					<div className="nextprev">
+						{this.previousButton()}
+						{this.nextButton()}
+					</div>
 				</form>
 				{/* when form is submitted, display list of dogs */}
 
