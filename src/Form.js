@@ -1,12 +1,13 @@
 import React from 'react';
-import FormStep1 from './Components/FormStep1';
-import FormStep2 from './Components/FormStep2';
-import FormStep3 from './Components/FormStep3';
-import FormStep4 from './Components/FormStep4';
-import FormStep5 from './Components/FormStep5';
-// import FormStep6 from './Components/FormStep6';
+import FormStep1 from './Components/Form/FormStep1';
+import FormStep2 from './Components/Form/FormStep2';
+import FormStep3 from './Components/Form/FormStep3';
+import FormStep4 from './Components/Form/FormStep4';
+import FormStep5 from './Components/Form/FormStep5';
+import FormStep6 from './Components/Form/FormStep6';
+import FormStep7 from './Components/Form/FormStep7';
 //when adding FormSteps remember to update lastStep
-import FormDisplayDogs from './Components/FormDisplayDogs';
+import FormDisplayDogs from './Components/Form/FormDisplayDogs';
 
 //https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
 
@@ -16,12 +17,14 @@ export default class Form extends React.Component {
 
 		this.state = {
 			currentStep: 1,
-			lastStep: 5,
+			lastStep: 7,
 			submitted: '',
 			username: '',
 			house: '',
 			kids: '',
-			cats: ''
+			cats: '',
+			otherdogs: '',
+			time: ''
 		};
 	}
 
@@ -37,12 +40,6 @@ export default class Form extends React.Component {
 		event.preventDefault();
 		// used by render to decide if can display dogs
 		this.setState({ submitted: true });
-		// const { username, house, kids } = this.state;
-		// alert(`You entered: \n
-		//       Name: ${username} \n
-		//       House: ${house} \n
-		//       Kids: ${kids}`
-		//       );
 	};
 
 	_next = () => {
@@ -122,10 +119,22 @@ export default class Form extends React.Component {
 						cats={this.state.cats}
 					/>
 					<FormStep5
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+						otherdogs={this.state.otherdogs}
+					/>
+					<FormStep6
+						currentStep={this.state.currentStep}
+						handleChange={this.handleChange}
+						time={this.state.time}
+					/>
+					<FormStep7
 						username={this.state.username}
 						house={this.state.house}
 						kids={this.state.kids}
 						cats={this.state.cats}
+						otherdogs={this.state.otherdogs}
+						time={this.state.time}
 						currentStep={this.state.currentStep}
 						handleChange={this.handleChange}
 						submitted={this.state.submitted}
@@ -142,6 +151,8 @@ export default class Form extends React.Component {
 						house={this.state.house}
 						kids={this.state.kids}
 						cats={this.state.cats}
+						otherdogs={this.state.otherdogs}
+						time={this.state.time}
 						dogs={this.props.dogs}
 					/>
 				)}

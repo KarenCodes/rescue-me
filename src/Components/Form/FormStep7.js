@@ -1,10 +1,10 @@
 import React from 'react';
 
-const FormStep5 = props => {
-	if (props.currentStep !== 5) {
+const FormStep7 = props => {
+	if (props.currentStep !== 7) {
 		return null;
 	}
-	const { username, house, kids, cats, submitted } = props;
+	const { username, house, kids, cats, otherdogs, time, submitted } = props;
 
 	return (
 		<React.Fragment>
@@ -16,6 +16,8 @@ const FormStep5 = props => {
 					<li>{house}</li>
 					<li>{kids}</li>
 					<li>{cats}</li>
+					<li>{otherdogs}</li>
+					<li>{time}</li>
 				</ul>
 				{submitted ? null : <button className="form-submit">Find my match!</button>}
 			</fieldset>
@@ -23,4 +25,4 @@ const FormStep5 = props => {
 	);
 };
 
-export default FormStep5;
+export default FormStep7;
