@@ -9,7 +9,7 @@ const FormStep1 = props => {
 			<legend>Tell me about yourself</legend>
 			<p>
 				<span className="emoji" role="img" aria-label="Fairy">
-					🧚‍♀️
+					🧚
 				</span>
 				Hi, I'm your fairy dogmother and I'm here to help you find a dog!
 			</p>
