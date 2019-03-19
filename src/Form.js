@@ -37,9 +37,10 @@ export default class Form extends React.Component {
 	};
 
 	handleSubmit = event => {
+		console.log('before', event);
 		event.preventDefault();
-		// used by render to decide if can display dogs
-		this.setState({ submitted: true });
+		// used by render to decide if ready to display dogs
+		if (this.state.currentStep === this.state.lastStep) this.setState({ submitted: true });
 	};
 
 	_next = () => {
