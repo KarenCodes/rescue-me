@@ -88,7 +88,7 @@ export default class Form extends React.Component {
 	render() {
 		return (
 			<main>
-				<section>
+				<section className="form">
 					<h1>Match me with new best friend</h1>
 					<p>
 						Step {this.state.currentStep} of {this.state.lastStep}
@@ -113,16 +113,20 @@ export default class Form extends React.Component {
 							currentStep={this.state.currentStep}
 							handleChange={this.handleChange}
 							kids={this.state.kids}
+							username={this.state.username}
+							house={this.state.house}
 						/>
 						<FormStep4
 							currentStep={this.state.currentStep}
 							handleChange={this.handleChange}
 							cats={this.state.cats}
+							kids={this.state.kids}
 						/>
 						<FormStep5
 							currentStep={this.state.currentStep}
 							handleChange={this.handleChange}
 							otherdogs={this.state.otherdogs}
+							cats={this.state.cats}
 						/>
 						<FormStep6
 							currentStep={this.state.currentStep}

@@ -465,6 +465,10 @@ button:focus {
 	outline: 2px solid var(--pink);
 }
 /*------------------------Match Form-----------------------------------*/
+section.form {
+	padding: 5%;
+}
+
 button.form-primary {
 	float: right;
 	width: 25%;
@@ -475,6 +479,10 @@ button.form-secondary {
 button.form-submit {
 	float: right;
 	width: 25%;
+}
+button.form-submit.final {
+	margin-top: 30px;
+	width: 50%;
 }
 fieldset {
 	margin: 5%;
@@ -709,11 +717,18 @@ input.form-control:focus {
 	}
 }
 @media only screen and (max-width: 560px) {
-	/* .filters button {
-		font-size: 16px;
+	form span.emoji {
+		font-size: 60px;
 	}
-	.filters h2 {
-		font-size: 16px;
-		font-weight: normal;
-	} */
+	form span.text {
+		font-size: 14px;
+	}
+}
+@media only screen and (max-width: 340px) {
+	.dog-list {
+		padding: 1%;
+		/* grid */
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-gap: 20px;
+	}
 }

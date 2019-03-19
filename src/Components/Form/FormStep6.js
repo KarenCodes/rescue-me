@@ -8,14 +8,14 @@ const FormStep6 = props => {
 		<React.Fragment>
 			<fieldset>
 				<legend>Do you have time to train your dog?</legend>
-
+				<p>You probably know where I am going with this - puppies take a LOT of time.</p>
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="time">
 							<span className="emoji" role="img" aria-label="Time to Train">
 								⏳
 							</span>
-							<span className="text">Time to Train</span>
+							<span className="text">Time</span>
 						</label>
 						<input
 							className="form-control"
@@ -33,7 +33,7 @@ const FormStep6 = props => {
 							<span className="emoji" role="img" aria-label="No Time to Train">
 								⌛
 							</span>
-							<span className="text">No Time to Train</span>
+							<span className="text">No Time</span>
 						</label>
 						<input
 							className="form-control"

@@ -5,22 +5,30 @@ const FormStep1 = props => {
 		return null;
 	}
 	return (
-		<React.Fragment>
-			<p>I'm excited to help you find a dog!</p>
-
+		<fieldset>
+			<legend>Tell me about yourself</legend>
+			<p>
+				<span className="emoji" role="img" aria-label="Fairy">
+					🧚‍♀️
+				</span>
+				Hi, I'm your fairy dogmother and I'm here to help you find a dog!
+			</p>
+			<p>I have a few questions to ask to you first. Let's start with an easy one.</p>
 			<div className="form-group">
-				<label htmlFor="username">What is your name? </label>
-				<input
-					className="form-control"
-					id="username"
-					name="username"
-					type="text"
-					placeholder="Enter your name"
-					value={props.username}
-					onChange={props.handleChange}
-				/>
+				<div className="form-item">
+					<label htmlFor="username">What is your name? </label>
+					<input
+						className="form-control"
+						id="username"
+						name="username"
+						type="text"
+						placeholder="Enter your name"
+						value={props.username}
+						onChange={props.handleChange}
+					/>
+				</div>
 			</div>
-		</React.Fragment>
+		</fieldset>
 	);
 };
 

@@ -4,11 +4,16 @@ const FormStep4 = props => {
 	if (props.currentStep !== 4) {
 		return null;
 	}
+	const { cats, kids } = props;
+	const message = !kids
+		? "Hmm, wonder why you didn't answer the question about kids."
+		: `Good to know that you have ${kids}. Wise choice.`;
+
 	return (
 		<React.Fragment>
 			<fieldset>
 				<legend>Will your dog be with cats?</legend>
-
+				<p>{message}</p>
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="cats">
@@ -22,7 +27,7 @@ const FormStep4 = props => {
 							id="cats"
 							name="cats"
 							type="radio"
-							checked={props.cats === 'cats' ? true : false}
+							checked={cats === 'cats' ? true : false}
 							value="cats"
 							onChange={props.handleChange}
 						/>
@@ -40,7 +45,7 @@ const FormStep4 = props => {
 							id="no-cats"
 							name="cats"
 							type="radio"
-							checked={props.cats === 'no cats' ? true : false}
+							checked={cats === 'no cats' ? true : false}
 							value="no cats"
 							onChange={props.handleChange}
 						/>
