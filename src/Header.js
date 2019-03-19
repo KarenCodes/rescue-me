@@ -22,7 +22,7 @@ export default class Header extends React.Component {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to="/form">Form</NavLink>
+							<NavLink to="/form">Match</NavLink>
 						</li>
 						<li>
 							<NavLink to="/about">About</NavLink>
