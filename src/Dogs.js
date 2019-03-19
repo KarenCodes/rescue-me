@@ -6,25 +6,26 @@ import FilteredDogList from './FilteredDogsList.js';
 
 const Dogs = props => {
 	const { dogs, conditions, setConditions, username } = props;
-	console.log(conditions);
 	return (
 		<Switch>
 			<Route
 				exact
 				path="/"
 				render={() => (
-					<section className="dogs container">
-						<h1>Dogs</h1>
-						<Filter dogs={dogs} conditions={conditions} setConditions={setConditions} />
-						<ul className="dog-list">
-							{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
-							{
-								<React.Fragment>
-									<FilteredDogList dogs={dogs} conditions={conditions} />
-								</React.Fragment>
-							}
-						</ul>
-					</section>
+					<main>
+						<section className="dogs container">
+							<h1>Dogs</h1>
+							<Filter dogs={dogs} conditions={conditions} setConditions={setConditions} />
+							<ul className="dog-list">
+								{dogs.length < 1 && <li key="empty">No dogs yet!</li>}
+								{
+									<React.Fragment>
+										<FilteredDogList dogs={dogs} conditions={conditions} />
+									</React.Fragment>
+								}
+							</ul>
+						</section>
+					</main>
 				)}
 			/>
 			<Route
@@ -33,7 +34,6 @@ const Dogs = props => {
 				render={() => (
 					<section className="dogs container">
 						<h2>Matches for {username ? username : 'you'}</h2>
-						{/* <Filter dogs={dogs} conditions={conditions} setConditions={setConditions} /> */}
 						<ul className="dog-list">
 							{dogs.length < 1 && <li key="empty">No dogs match!</li>}
 							{

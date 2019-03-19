@@ -9,7 +9,7 @@ import FormStep7 from './Components/Form/FormStep7';
 //when adding FormSteps remember to update lastStep
 import FormDisplayDogs from './Components/Form/FormDisplayDogs';
 
-//https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
+//borrowed heavily from https: css-tricks.com/the-magic-of-react-based-multi-step-forms/
 
 export default class Form extends React.Component {
 	constructor(props) {
@@ -37,7 +37,6 @@ export default class Form extends React.Component {
 	};
 
 	handleSubmit = event => {
-		console.log('before', event);
 		event.preventDefault();
 		// used by render to decide if ready to display dogs
 		if (this.state.currentStep === this.state.lastStep) this.setState({ submitted: true });
@@ -89,76 +88,78 @@ export default class Form extends React.Component {
 	render() {
 		return (
 			<main>
-				<h1>Match me with new best friend</h1>
-				<p>
-					Step {this.state.currentStep} of {this.state.lastStep}
-				</p>
+				<section>
+					<h1>Match me with new best friend</h1>
+					<p>
+						Step {this.state.currentStep} of {this.state.lastStep}
+					</p>
 
-				<form onSubmit={this.handleSubmit}>
-					{/*
+					<form onSubmit={this.handleSubmit}>
+						{/*
         render the form steps and pass required props in
       */}
-					<FormStep1
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						username={this.state.username}
-					/>
-					<FormStep2
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						house={this.state.house}
-						username={this.state.username}
-					/>
-					<FormStep3
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						kids={this.state.kids}
-					/>
-					<FormStep4
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						cats={this.state.cats}
-					/>
-					<FormStep5
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						otherdogs={this.state.otherdogs}
-					/>
-					<FormStep6
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						time={this.state.time}
-					/>
-					<FormStep7
-						username={this.state.username}
-						house={this.state.house}
-						kids={this.state.kids}
-						cats={this.state.cats}
-						otherdogs={this.state.otherdogs}
-						time={this.state.time}
-						currentStep={this.state.currentStep}
-						handleChange={this.handleChange}
-						submitted={this.state.submitted}
-					/>
+						<FormStep1
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							username={this.state.username}
+						/>
+						<FormStep2
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							house={this.state.house}
+							username={this.state.username}
+						/>
+						<FormStep3
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							kids={this.state.kids}
+						/>
+						<FormStep4
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							cats={this.state.cats}
+						/>
+						<FormStep5
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							otherdogs={this.state.otherdogs}
+						/>
+						<FormStep6
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							time={this.state.time}
+						/>
+						<FormStep7
+							username={this.state.username}
+							house={this.state.house}
+							kids={this.state.kids}
+							cats={this.state.cats}
+							otherdogs={this.state.otherdogs}
+							time={this.state.time}
+							currentStep={this.state.currentStep}
+							handleChange={this.handleChange}
+							submitted={this.state.submitted}
+						/>
 
-					<div className="nextprev">
-						{this.previousButton()}
-						{this.nextButton()}
-					</div>
-				</form>
-				{/* when form is submitted, display list of dogs */}
+						<div className="nextprev">
+							{this.previousButton()}
+							{this.nextButton()}
+						</div>
+					</form>
+					{/* when form is submitted, display list of dogs */}
 
-				{this.state.submitted && (
-					<FormDisplayDogs
-						username={this.state.username}
-						house={this.state.house}
-						kids={this.state.kids}
-						cats={this.state.cats}
-						otherdogs={this.state.otherdogs}
-						time={this.state.time}
-						dogs={this.props.dogs}
-					/>
-				)}
+					{this.state.submitted && (
+						<FormDisplayDogs
+							username={this.state.username}
+							house={this.state.house}
+							kids={this.state.kids}
+							cats={this.state.cats}
+							otherdogs={this.state.otherdogs}
+							time={this.state.time}
+							dogs={this.props.dogs}
+						/>
+					)}
+				</section>
 			</main>
 		);
 	}
