@@ -4,11 +4,16 @@ const FormStep3 = props => {
 	if (props.currentStep !== 3) {
 		return null;
 	}
+	const { kids, house, username } = props;
+	const message = !house ? 'homeless' : house;
+
 	return (
 		<React.Fragment>
 			<fieldset>
 				<legend>Will your dog be with kids?</legend>
-
+				<p>
+					Nice, {message}. Are there any mini-versions of {username ? username : 'you'} running around?
+				</p>
 				<div className="form-group">
 					<div className="form-item">
 						<label htmlFor="kids">
@@ -22,7 +27,7 @@ const FormStep3 = props => {
 							id="kids"
 							name="kids"
 							type="radio"
-							checked={props.kids === 'kids' ? true : false}
+							checked={kids === 'kids' ? true : false}
 							value="kids"
 							onChange={props.handleChange}
 						/>
@@ -40,7 +45,7 @@ const FormStep3 = props => {
 							id="no-kids"
 							name="kids"
 							type="radio"
-							checked={props.kids === 'no kids' ? true : false}
+							checked={kids === 'no kids' ? true : false}
 							value="no kids"
 							onChange={props.handleChange}
 						/>
