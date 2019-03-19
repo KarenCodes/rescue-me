@@ -37,9 +37,9 @@ const FormDisplayDogs = props => {
 	return (
 		// return <FilteredDogsList conditions={this.state.conditions} />;
 
-		<div>
+		<React.Fragment>
 			<Dogs username={username} dogs={dogs} conditions={conditions} />
-		</div>
+		</React.Fragment>
 	);
 };
 
