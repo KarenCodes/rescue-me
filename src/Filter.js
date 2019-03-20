@@ -113,7 +113,7 @@ export default class Filter extends React.Component {
 			<div>
 				<Accordion>
 					{/* use expanded={true} on AccordionItem to have it default to open*/}
-					<AccordionItem expanded={true} className={'accordion__item--has-icon'}>
+					<AccordionItem className={'accordion__item--has-icon'}>
 						<AccordionItemTitle className={'accordion__title accordion__title--animated'}>
 							<h4>Filtered search</h4>
 							<div className="accordion__arrow" role="presentation" />
