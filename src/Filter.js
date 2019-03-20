@@ -54,8 +54,9 @@ export default class Filter extends React.Component {
 	getTopButtons = () => {
 		return (
 			//Buttons
-			<div>
-				<ul key="top" className="filters good-with-filters">
+			<div className="filters">
+				<h4>Good With</h4>
+				<ul key="top">
 					{SINGLE_FILTERS.map(group => {
 						return (
 							// Display filters in group
@@ -86,7 +87,7 @@ export default class Filter extends React.Component {
 					FILTERS.map(group => {
 						return (
 							<li key={group.name}>
-								<h2>{group.label}</h2>
+								<h4>{group.label}</h4>
 								<ul>
 									{// Display filters in group
 									group.values.map(value => (
