@@ -23,6 +23,7 @@ html {
 	box-sizing: inherit;
 }
 
+/* sticky footer */
 html,
 body,
 #root,
@@ -40,7 +41,7 @@ main {
 footer {
 	flex-shrink: 0;
 }
-
+/* general settings */
 .body {
 	background: var(--palegray);
 	color: var(--black);
@@ -91,6 +92,8 @@ ul {
 	padding: 0;
 	margin: 0;
 }
+
+/* icons */
 
 .fa-child:before,
 .fa-cat:before,
@@ -406,22 +409,16 @@ https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php */
 .filters {
 	text-align: center;
 	max-width: 650px;
-	/* padding: 10px; */
 	margin: 0 auto;
 }
 
-.filters h2,
-h2.good-with-filters {
+.filters h4 {
 	font-size: 18px;
 	font-weight: normal;
-}
-
-.filters h2 {
 	margin-bottom: 0px;
 }
 
-.filters ul,
-ul.filters.good-with-filters {
+.filters ul {
 	margin: 0 auto;
 	padding: 0;
 	/* grid */
@@ -430,8 +427,8 @@ ul.filters.good-with-filters {
 	justify-content: space-evenly;
 	flex-flow: row wrap;
 }
-.filters ul li,
-.filters.good-with-filters li {
+
+.filters ul li {
 	flex-grow: 1;
 	flex-basis: 0;
 	flex-shrink: 1;
@@ -624,9 +621,7 @@ input.form-control:focus {
 	transition: transform 0.25s ease, -webkit-transform 0.25s ease;
 }
 
-/* -------------------------------------------------- */
-/* ---------------- Animation part ------------------ */
-/* -------------------------------------------------- */
+/* ---------------- Animation part Accordion----------------- */
 
 @keyframes fadein {
 	0% {
