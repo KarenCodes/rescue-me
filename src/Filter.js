@@ -1,5 +1,5 @@
 import React from 'react';
-import { FILTERS, SINGLE_FILTERS } from './Helpers.js';
+import { FILTERS, SINGLE_FILTERS } from './Settings.js';
 import { Accordion, AccordionItem, AccordionItemTitle, AccordionItemBody } from 'react-accessible-accordion';
 
 const Button = props => {
