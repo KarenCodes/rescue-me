@@ -1,6 +1,7 @@
 import React from 'react';
 import Parser from 'html-react-parser';
 import domToReact from 'html-react-parser/lib/dom-to-react';
+import Shelter from './Shelter';
 
 /*
 dog.content.rendered contains about, contact and video
@@ -22,6 +23,7 @@ const Content = props => {
 					<div className="dog-contact">
 						<h4>Ask Me About {dog.title.rendered}</h4>
 						{domToReact(children, parserOptions)}
+						<Shelter dog={dog} />
 					</div>
 				);
 				// about - change class and add title
