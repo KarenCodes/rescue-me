@@ -1,7 +1,7 @@
 import React from 'react';
 
 //used in Content component to add Shelter to Contact info
-const Shelter = props => {
+const DogShelter = props => {
 	const { dog } = props;
 
 	return (
@@ -11,4 +11,4 @@ const Shelter = props => {
 	);
 };
 
-export default Shelter;
+export default DogShelter;
