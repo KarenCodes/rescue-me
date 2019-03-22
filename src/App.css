@@ -184,7 +184,6 @@ header {
 
 /* active class set by NavLink */
 #navigation .active {
-	/* background: var(--pink); */
 	color: var(--pink);
 }
 
@@ -229,20 +228,6 @@ button.modal-close span {
 	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	justify-items: center;
 	grid-gap: 20px;
-}
-
-/*----------------single dog card in list of dogs----------------------*/
-#xx .dog-list .doglist.container {
-	text-decoration: none;
-	/* grid */
-	display: grid;
-	justify-items: center;
-	grid-template-columns: 300px;
-	grid-template-areas:
-		'image'
-		'name'
-		'features'
-		'goodwith';
 }
 
 /*---------------dog components -----------------------------------------*/
@@ -510,6 +495,69 @@ input {
 input.form-control:focus {
 	outline: 2px solid var(--pink);
 }
+/*------------------------About shelters---------------------------------*/
+.shelter-list {
+	padding: 3%;
+	/* grid */
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	justify-items: center;
+	grid-gap: 30px;
+}
+
+.shelter-list > li {
+	background: var(--paleblue);
+	border: 1px var(--darkblue) solid;
+	border-radius: 5px;
+	padding: 2% 5%;
+	background: var(--darkblue);
+	color: white;
+	font-weight: 500;
+}
+.shelter-list a {
+	color: white;
+}
+
+.shelter-list hr,
+.shelter-list .wp-block-spacer {
+	display: none;
+}
+.shelter-list p {
+	margin-top: 0;
+	margin-right: 20px;
+	text-align: left;
+	line-height: 1.5;
+	font-size: 18px;
+}
+.shelter-list figcaption {
+	background: white;
+	text-align: center;
+	color: var(--darkblue);
+	font-weight: bold;
+	padding: 10px;
+}
+
+.shelter-list figure.alignleft {
+	float: left;
+}
+
+.shelter-list [itemprop='location'] {
+	padding-top: 20px;
+	line-height: 1.5;
+}
+.shelter-list [itemprop='location'] a {
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.shelter-list .website-link {
+	padding-top: 20px;
+	font-size: 18px;
+}
+
+.shelter-list img {
+	max-width: 100%;
+}
 
 /* ---------------------Filter toggle/accordion--------------------------*/
 /* https://github.com/springload/react-accessible-accordion */
@@ -713,6 +761,14 @@ input.form-control:focus {
 	}
 	form span.text {
 		font-size: 14px;
+	}
+	.shelter-list {
+		padding: 1%;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		grid-gap: 20px;
+	}
+	.shelter-list > li {
+		padding: 2%;
 	}
 }
 @media only screen and (max-width: 340px) {
