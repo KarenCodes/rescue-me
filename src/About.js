@@ -1,5 +1,6 @@
 import React from 'react';
 import { SHELTERS } from './Settings.js';
+import SheltersList from './SheltersList.js';
 
 export default class About extends React.Component {
   state = {
@@ -26,6 +27,20 @@ export default class About extends React.Component {
   }
 
   render = () => {
-    return <main>This will have our About page</main>;
+    return (
+      <section className="shelters container">
+        <h2>Shelters</h2>
+        <ul className="shelter-list">
+          {this.state.shelters.length < 1 && (
+            <li key="empty">Loading Shelters!</li>
+          )}
+          {
+            <React.Fragment>
+              <SheltersList shelters={this.state.shelters} />
+            </React.Fragment>
+          }
+        </ul>
+      </section>
+    );
   };
 }
