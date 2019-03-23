@@ -30,7 +30,7 @@ export default class About extends React.Component {
 		return (
 			<main>
 				<section className="shelters container">
-					<h1>About Our Shelters</h1>
+					<h1>About Our Rescue</h1>
 					<ul className="shelter-list">
 						{this.state.shelters.length < 1 && <li key="empty">Loading Shelters!</li>}
 						{
