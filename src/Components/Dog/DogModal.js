@@ -22,7 +22,8 @@ const customInlineStyles = {
 		margin: '5px'
 	},
 	overlay: {
-		backgroundColor: '#3172a5'
+		// backgroundColor: '#3172a5'
+		backgroundColor: 'rgb(49, 114, 165, 0.5)'
 	}
 };
 
