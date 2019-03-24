@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import { Route, Switch } from 'react-router-dom';
 import Filter from './Filter.js';
 import FilteredDogList from './FilteredDogsList.js';
@@ -12,6 +13,12 @@ const Dogs = props => {
         path="/"
         render={() => (
           <main>
+            <Helmet>
+              <title>
+                Rescue Dogs Available for Adoption - Rescue Me
+          </title>
+              <meta name="description" content="Use our search to look at dogs available at our rescue." />
+            </Helmet>
             <section className="dogs container">
               <h1>Dogs</h1>
               <Filter
