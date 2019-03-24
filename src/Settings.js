@@ -1,10 +1,4 @@
 // Consts and helpers functions
-
-// Array with WordPress site URLS
-export const WP_URLS = [
-  'https://hackathonkarenandbrezo.wpcomstaging.com/wp-json/wp/v2/rescue_me_dogs?per_page=100&_embed',
-  'https://hackathonkarenandbrezo.mystagingwebsite.com/wp-json/wp/v2/rescue_me_dogs?per_page=100&_embed'
-];
 export const DOGS_CUSTOM_POST_TYPE = `rescue_me_dogs`;
 export const DOGS_FETCH_LIMIT = '?per_page=100';
 export const SHELTERS = [
@@ -121,4 +115,4 @@ export const shuffle = function(arr) {
   }
   return arr;
 };
-export default WP_URLS;
+export default SHELTERS;

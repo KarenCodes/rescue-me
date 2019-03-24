@@ -7,8 +7,11 @@ const withTransformProps = mapperFunc => BaseComponent => baseProps => {
 };
 
 // Component that lists dogs
-const renderDogsList = ({ dogs }) =>
-  dogs.map(dog => <DogCard dog={dog} key={dog.id} />);
+const renderDogsList = ({ dogs }) => {
+  if (dogs.length < 1)
+    return <li key="empty">No dogs yet, come back in a few days!</li>;
+  return dogs.map(dog => <DogCard dog={dog} key={dog.id} />);
+};
 
 // Returns true if conditions are in dog
 let hasConditions = (dog, conditions) => {
