@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import FormStep1 from './Components/Form/FormStep1';
 import FormStep2 from './Components/Form/FormStep2';
 import FormStep3 from './Components/Form/FormStep3';
@@ -88,6 +89,15 @@ export default class Form extends React.Component {
 	render() {
 		return (
 			<main>
+				{/* add page title and meta */}
+				<Helmet>
+					<title>Find my dog match - Rescue Me</title>
+					<meta
+						name="description"
+						content="Enter information about yourself and we'll match you with dogs."
+					/>
+				</Helmet>
+
 				<section className="form">
 					<h1>Match me with new best friend</h1>
 					<p>

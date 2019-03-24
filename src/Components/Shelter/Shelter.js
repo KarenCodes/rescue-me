@@ -2,7 +2,7 @@ import React from 'react';
 
 const Shelter = props => {
 	const { shelter, shelterId } = props;
-	console.log('shelter', shelter);
+
 	return (
 		<li key={shelterId}>
 			<article key={shelterId} className="shelterId container">

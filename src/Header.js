@@ -6,10 +6,10 @@ export default class Header extends React.Component {
     return (
       <header>
         <div className="site-name">
-          <NavLink exact to="/">
+          {/* <NavLink exact to="/"> */}
             <i className="fas fa-life-ring" />
             Rescue Me
-          </NavLink>
+          {/* </NavLink> */}
         </div>
 
         {/* using NavLink instead of link because it adds class="active" to active link

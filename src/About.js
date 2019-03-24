@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import { SHELTERS } from './Settings.js';
 import SheltersList from './SheltersList.js';
 
@@ -29,6 +30,12 @@ export default class About extends React.Component {
 	render = () => {
 		return (
 			<main>
+        <Helmet>
+          <title>
+            About our rescue - Rescue Me
+          </title>
+          <meta name="description" content="Find out more about our dog rescue and what you can do to help." />
+        </Helmet>
 				<section className="shelters container">
 					<h1>About Our Rescue</h1>
 					<ul className="shelter-list">
