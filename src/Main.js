@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { SHELTERS, shuffle } from './Settings.js';
-import Dogs from './Dogs';
+import Dogs from './Components/Dogs/Dogs.js';
 import Form from './Form';
 import About from './About';
 
