@@ -1,9 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Route, Switch } from 'react-router-dom';
-import Filter from './Filter.js';
+import Filter from '../Filter/Filters.js';
 import FilteredDogList from './FilteredDogsList.js';
 
+// Component that will display the list of dogs on Dogs page or Match (form) page.
 const Dogs = props => {
   const { dogs, conditions, setConditions, username } = props;
   return (
@@ -46,12 +47,9 @@ const Dogs = props => {
           <section className="dogs container">
             <h2>Matches for {username ? username : 'you'}</h2>
             <ul className="dog-list">
-              {dogs.length < 1 && <li key="empty">No dogs match!</li>}
-              {
-                <React.Fragment>
-                  <FilteredDogList dogs={dogs} conditions={conditions} />
-                </React.Fragment>
-              }
+              <React.Fragment>
+                <FilteredDogList dogs={dogs} conditions={conditions} />
+              </React.Fragment>
             </ul>
           </section>
         )}
