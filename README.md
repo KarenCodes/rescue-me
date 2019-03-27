@@ -22,11 +22,11 @@ Each dog rescue group has a WordPress site and uploads our [Rescue Me plugin](ht
 Our App uses React and the WordPress rest API to get the Dog information from the WordPress sites. A list of dogs will be fetched from the sites and shuffled before being presented on Rescue Me, so no shelter gets priority.
 
 There are three ways to find a dog for adoption on Rescue Me.
-Browse.
+1. Browse.
  This is the default mode. Dogs from WordPress sites are displayed, and can be clicked on, to view their details. Each dog has a section with highlighted contact information.
-Filter.
+2. Filter.
  Using metadata like size, gender etc, present in Dogs, our filter helps narrow down the search. Metadata is added on WordPress sites through the [Rescue Me Dog Gutenberg block](https://github.com/KarenCodes/rescue-me-block).
-Match.
+3. Match.
  Our form asks the visitor a set of questions. Visitor replies are matched with filters to narrow down the list. 
 
 The About page lists the rescue groups and gives information about them. Information for each shelter comes from the home page on each WordPress site.
