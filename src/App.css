@@ -52,6 +52,12 @@ footer {
 	padding: 1%;
 	margin-top: 20px;
 }
+footer a {
+	color: white;
+}
+footer a:hover {
+	color: var(--darkblue);
+}
 h1 {
 	font-size: 30px;
 	text-align: center;
