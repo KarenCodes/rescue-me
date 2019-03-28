@@ -14,7 +14,6 @@ For more info on the rescue groups participating, visit the About page
 
 Data on this app is for demo purposes only and the dogs are sadly not available. Please check your local rescue groups where you can find a wonderful dog.
 
-
 ## How it works
 
 Each dog rescue group has a WordPress site and uploads our [Rescue Me plugin](https://github.com/KarenCodes/rescue-me-dog-block). They will enter information about their available dogs using a customized Gutenberg block and using a custom post type - Dogs. Metadata added via the block (ex. size, gender, etc) will be used by the Rescue Me app to filter and find matching dogs.
@@ -22,12 +21,13 @@ Each dog rescue group has a WordPress site and uploads our [Rescue Me plugin](ht
 Our App uses React and the WordPress rest API to get the Dog information from the WordPress sites. A list of dogs will be fetched from the sites and shuffled before being presented on Rescue Me, so no shelter gets priority.
 
 There are three ways to find a dog for adoption on Rescue Me.
+
 1. Browse.
  This is the default mode. Dogs from WordPress sites are displayed, and can be clicked on, to view their details. Each dog has a section with highlighted contact information.
 ![https://cld.wthms.co/YPwOQy](https://cld.wthms.co/YPwOQy+)
 
 2. Filter.
- Using metadata like size, gender etc, present in Dogs, our filter helps narrow down the search. Metadata is added on WordPress sites through the [Rescue Me Dog Gutenberg block](https://github.com/KarenCodes/rescue-me-block).
+ Using metadata like size, gender etc, present in Dogs, our filter helps narrow down the search. Metadata is added on WordPress sites through the [Rescue Me Dog Gutenberg block](https://github.com/KarenCodes/rescue-me-dog-block).
  ![https://cld.wthms.co/KYjWIj](https://cld.wthms.co/KYjWIj+)
 
 3. Match.
@@ -66,6 +66,7 @@ To add or change a WordPress site, edit Settings.js file and add/remove on SHELT
 Adding or changing filter values can be done by modifying Rescue Me Dog Gutenberg block to add the metadata and then adding new values on Settings.js on FILTERS const.
 
 ## Scope
+
 Rescue Me App is in English, it works on modern browsers and it pulls up to 100 dogs from each WordPress site.
 
 ——
